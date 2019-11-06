@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Tabs } from "deer-ui";
-require("./index.css");
+import { Button, Tabs } from "../../src";
+// require("./index.css");
 const TabPane  = Tabs.TabPane
 function App() {
   return (
