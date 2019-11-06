@@ -1,0 +1,25 @@
+blockquote {
+    position: relative;
+    color: #ccc;
+    &::before {
+      content: "|";
+      position: absolute;
+      left:-37px;
+      top:0;
+    }
+  }
+  
+  code {
+    border-radius: 4px;
+    padding: 15px !important;
+  }
+  
+  ol {
+    padding: 0;
+  }
+  
+  hr {
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 1px 4px 0 rgba(15, 35, 95, 0.12);
+    margin: 20px 0 50px;
+  }

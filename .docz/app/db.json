@@ -1,0 +1,354 @@
+{
+  "config": {
+    "title": "BB Color",
+    "description": "A Design UI library for React",
+    "menu": [],
+    "version": "0.0.1",
+    "repository": null,
+    "native": false,
+    "themeConfig": {},
+    "separator": "-",
+    "plugins": [
+      {}
+    ]
+  },
+  "entries": [
+    {
+      "key": "demo/project/README.md",
+      "value": {
+        "id": "831301ae9ca6c2e5f56d06fa30adbf8c",
+        "filepath": "demo/project/README.md",
+        "fullpath": "/Users/zhangboyang/product/deer-ui/demo/project/README.md",
+        "link": "",
+        "slug": "demo-project-readme",
+        "route": "/demo-project-readme",
+        "name": "Readme",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "available-scripts",
+            "depth": 2,
+            "value": "Available Scripts"
+          },
+          {
+            "slug": "npm-start",
+            "depth": 3,
+            "value": "npm start"
+          },
+          {
+            "slug": "npm-test",
+            "depth": 3,
+            "value": "npm test"
+          },
+          {
+            "slug": "npm-run-build",
+            "depth": 3,
+            "value": "npm run build"
+          },
+          {
+            "slug": "npm-run-eject",
+            "depth": 3,
+            "value": "npm run eject"
+          },
+          {
+            "slug": "learn-more",
+            "depth": 2,
+            "value": "Learn More"
+          },
+          {
+            "slug": "code-splitting",
+            "depth": 3,
+            "value": "Code Splitting"
+          },
+          {
+            "slug": "analyzing-the-bundle-size",
+            "depth": 3,
+            "value": "Analyzing the Bundle Size"
+          },
+          {
+            "slug": "making-a-progressive-web-app",
+            "depth": 3,
+            "value": "Making a Progressive Web App"
+          },
+          {
+            "slug": "advanced-configuration",
+            "depth": 3,
+            "value": "Advanced Configuration"
+          },
+          {
+            "slug": "deployment",
+            "depth": 3,
+            "value": "Deployment"
+          },
+          {
+            "slug": "npm-run-build-fails-to-minify",
+            "depth": 3,
+            "value": "npm run build  fails to minify"
+          }
+        ]
+      }
+    },
+    {
+      "key": "stories/markdown/start.md",
+      "value": {
+        "id": "f43d47e223fa1da925183de18226d9f6",
+        "filepath": "stories/markdown/start.md",
+        "fullpath": "/Users/zhangboyang/product/deer-ui/stories/markdown/start.md",
+        "link": "",
+        "slug": "stories-markdown-start",
+        "route": "/stories-markdown-start",
+        "name": "Start",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "快速上手",
+            "depth": 1,
+            "value": "快速上手"
+          },
+          {
+            "slug": "安装",
+            "depth": 2,
+            "value": "安装"
+          },
+          {
+            "slug": "如何使用",
+            "depth": 2,
+            "value": "如何使用"
+          },
+          {
+            "slug": "不会搭项目",
+            "depth": 2,
+            "value": "不会搭项目?"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/components/button/button.md",
+      "value": {
+        "id": "7cb440915ef13dad96532c4cf2743601",
+        "filepath": "src/components/button/button.md",
+        "fullpath": "/Users/zhangboyang/product/deer-ui/src/components/button/button.md",
+        "link": "",
+        "slug": "src-components-button-button",
+        "route": "/src-components-button-button",
+        "name": "Button",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tooltip",
+            "depth": 2,
+            "value": "Tooltip"
+          },
+          {
+            "slug": "基础用法",
+            "depth": 3,
+            "value": "基础用法"
+          },
+          {
+            "slug": "attributes",
+            "depth": 3,
+            "value": "Attributes"
+          },
+          {
+            "slug": "top",
+            "depth": 2,
+            "value": "top"
+          }
+        ]
+      }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/components/button/Button.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "actualName": "Button",
+          "props": {
+            "type": {
+              "type": {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "\"default\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"error\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"link\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"primary\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"success\"",
+                    "computed": false
+                  },
+                  {
+                    "value": "\"warning\"",
+                    "computed": false
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "\"default\"",
+                "computed": false
+              }
+            },
+            "disabled": {
+              "type": {
+                "name": "bool"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "false",
+                "computed": false
+              }
+            },
+            "block": {
+              "type": {
+                "name": "bool"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "false",
+                "computed": false
+              }
+            },
+            "onClick": {
+              "type": {
+                "name": "func"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "() => {}",
+                "computed": false
+              }
+            },
+            "href": {
+              "type": {
+                "name": "string"
+              },
+              "required": false,
+              "description": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "src/components/tabs/TabPane.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "TabPane",
+          "methods": [],
+          "actualName": "TabPane"
+        }
+      ]
+    },
+    {
+      "key": "src/components/tabs/Tabs.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "Tabs",
+          "methods": [
+            {
+              "name": "setActiveLineStyle",
+              "docblock": null,
+              "modifiers": [],
+              "params": [],
+              "returns": null
+            },
+            {
+              "name": "onTabChange",
+              "docblock": null,
+              "modifiers": [],
+              "params": [
+                {
+                  "name": "disabled",
+                  "type": null
+                }
+              ],
+              "returns": null
+            }
+          ],
+          "actualName": "Tabs",
+          "props": {
+            "defaultActiveKey": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "\"1\"",
+                "computed": false
+              }
+            },
+            "activeKey": {
+              "type": {
+                "name": "union",
+                "value": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "number"
+                  }
+                ]
+              },
+              "required": false,
+              "description": ""
+            },
+            "onChange": {
+              "type": {
+                "name": "func"
+              },
+              "required": false,
+              "description": "",
+              "defaultValue": {
+                "value": "() => {}",
+                "computed": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "demo/project/src/App.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "App",
+          "methods": [],
+          "actualName": "App"
+        }
+      ]
+    }
+  ]
+}
