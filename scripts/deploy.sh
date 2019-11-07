@@ -16,7 +16,7 @@ echo "start publish..."
 # 提交到  gh-pages
 git config  --get remote.origin.url
 git init
-git config user.name "zhangboyang123"
+git config user.name "2740824389@qq.com"
 git config user.email "2740824389@qq.com"
 git add .
 git commit -m 'docs:publish'

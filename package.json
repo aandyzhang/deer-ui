@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "React.js UI components for PC Web",
   "repository": "https://github.com/zhangboyang123/deer-ui",
+  "homepage": "https://zhangboyang123.github.io/",
   "main": "dist/index.js",
   "module": "es/index.js",
   "scripts": {
@@ -64,7 +65,7 @@
   ],
   "author": "boyang",
   "storybook-deployer": {
-    "gitUsername": "zhangboyang123",
+    "gitUsername": "2740824389@qq.com",
     "gitEmail": "2740824389@qq.com",
     "commitMessage": "docs: publish docs"
   },
