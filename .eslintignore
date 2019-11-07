@@ -1,0 +1,10 @@
+node_modules
+*.bundle.js
+*.js.map
+.history
+dist
+lib
+_site
+.docs
+.vscode
+**/*.snap

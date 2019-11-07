@@ -1,4 +1,4 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 require("./style.scss");
 
@@ -53,7 +53,7 @@ class Tabs extends PureComponent {
     if (_activeKey !== prevState.activeKey) {
       return {
         _activeKey
-      }
+      };
     }
   }
 

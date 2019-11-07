@@ -7,3 +7,6 @@ _site
 lib
 es
 dist
+.docs
+.DS_Store
+.docz

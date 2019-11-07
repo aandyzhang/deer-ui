@@ -1,11 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-const { name, repository, version } = require("../package.json");
+const { name, repository } = require("../package.json");
 import { FaGithub } from "react-icons/fa";
-import Button from "../src/components/button";
+// import Button from "../src/components/button";
 import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
-import buttonMd from "../src/components/button/button.md";
 import startMd from './markdown/start.md'
 
 storiesOf("综述", module)
@@ -87,10 +86,10 @@ storiesOf("综述", module)
   ))
   .add("按钮", () => (
     <div>
-      <Button>按钮</Button>
-      <Button type="success">按钮</Button>
+      {/* <Button>按钮</Button>
+      <Button type="success">按钮</Button> */}
       <ReactMarkDown
-        source={buttonMd}
+        source={startMd}
         renderers={{
           code: CodeBlock
         }}

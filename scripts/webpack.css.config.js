@@ -1,8 +1,8 @@
-const webpack = require("webpack");
+// const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const components = path.resolve(__dirname, "../src/components");
 const mainFile = "style.scss"
 //多入口

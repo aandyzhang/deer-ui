@@ -7,14 +7,14 @@ class TabPane extends React.Component {
   //   }
 
   render() {
-    const { children,arr,visible } = this.props;
+    const { children, arr, visible } = this.props;
     if (!visible) {
       return null;
     }
     return (
-          <div className="TabPane" {...arr}>
-              {children}
-          </div>
+      <div className="TabPane" {...arr}>
+        {children}
+      </div>
     );
   }
 }

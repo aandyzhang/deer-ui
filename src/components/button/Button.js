@@ -36,9 +36,12 @@ class Button extends Component {
     const isDisabled = disabled ? { disabled: true } : { onClick };
     if (href) {
       return (
-        <a href={ disabled ? "#" : href} disabled={disabled} 
-        className="Button-link"
-        { ...attr}>
+        <a
+          href={disabled ? "#" : href}
+          disabled={disabled}
+          className="Button-link"
+          {...attr}
+        >
           {children}
         </a>
       );
@@ -50,7 +53,7 @@ class Button extends Component {
           {...isDisabled}
           className={`btn btn-${type} ${disabled && "btn-disabled"} ${block &&
             "btn-block"}`}
-          { ...attr}
+          {...attr}
         >
           {children}
         </button>

@@ -1,4 +1,4 @@
-const webpack = require("webpack");
+// const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const srcRoot = path.resolve(__dirname, "../src");
 const buildPath = path.resolve(__dirname, "../dist");
 
-const { version, name, description } = require("../package.json");
+const {  name } = require("../package.json");
 
 module.exports = {
   mode: "production",
