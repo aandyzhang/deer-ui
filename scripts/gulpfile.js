@@ -19,8 +19,8 @@ const DIR = {
     path.resolve(__dirname, "../src/components/**/styles.less"),
     path.resolve(__dirname, "../src/components/**/index.less")
   ],
-  lib: path.resolve(__dirname, "../lib"),
-  es: path.resolve(__dirname, "../es"),
+  lib: path.resolve(__dirname, "../lib/components"),
+  es: path.resolve(__dirname, "../es/components"),
   dist: path.resolve(__dirname, "../dist")
 };
 
