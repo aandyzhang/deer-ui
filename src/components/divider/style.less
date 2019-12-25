@@ -1,0 +1,66 @@
+.Divider-vertical{
+    margin: 0px 5px;
+    height: 12px;
+    display: inline-block;
+    border-right: 1px solid #888;
+    vertical-align: middle;
+   &.dashed{
+        border-right-style: dashed;
+    }
+}
+.Divider-horizontal{
+    margin: 10px 0px;
+    width: 100%;
+    border-bottom: 1px solid #888;
+    &.dashed{
+        border-bottom-style: dashed;
+    }
+}
+
+.Divider-orientation{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: 500;
+    display: table;
+    b {
+        height: 1px;
+        width: 50%;
+        display: table-cell;
+        border-top: 1px solid #888;
+        position: relative;
+        top: 50%;
+        transform: translateY(50%);
+      }
+    &.Divider-orientation-center{
+        text-align: center;
+    }
+    &.Divider-orientation-left{
+        b {
+            &:first-child {
+              width: 10%;
+            }
+            &:last-child {
+              width: 90%;
+            }
+          }
+    }
+    &.Divider-orientation-right{
+        b {
+            &:first-child {
+              width: 80%;
+            }
+            &:last-child {
+              width: 90%;
+            }
+          }
+    }
+    .Divider-orientation-content{
+        text-align: center;
+        padding:0 20px;
+        font-size: 16px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+}

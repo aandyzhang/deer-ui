@@ -1,0 +1,69 @@
+.Spin-container{
+    position: relative;
+    height: 100%;
+    .Spin-blur{
+        overflow: hidden;
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .Spin-wrapper{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(255,255,255,0.9);
+        z-index: 200;
+        align-items: center;
+        .Spin-wrapper-icon{
+            font-size: 32px;
+            svg  {
+                display: inline-block;
+                animation: deer-ui-spin 1.5s linear infinite;
+            }
+            &.Spin-wrapper-icon-large{
+                font-size: 40px;
+            }
+            &.Spin-wrapper-icon-small{
+                font-size: 24px;
+            }
+        }
+        .Spin-wrapper-tip{
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 10px;
+            
+        }
+    }
+}
+.Spin-spinning{
+    .Spin-indicator{
+        font-size: 32px;
+        svg{
+            animation: deer-ui-spin 1.5s linear infinite;
+        }
+        &.Spin-indicator-small {
+            font-size: 20px;
+        }
+        &.Spin-indicator-large {
+            font-size: 40px;
+        }
+        &.Spin-indicator-default {
+            font-size: 32px;
+        }
+    }
+}
+@keyframes deer-ui-spin{
+    0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+}

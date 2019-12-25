@@ -62,7 +62,7 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
+              importLoaders: 3,
             }
           },
           {
@@ -70,7 +70,13 @@ module.exports = {
           },
           {
             loader: "less-loader",
-          }
+          },
+          // {
+          //   loader: 'sass-resources-loader',
+          //   options: {
+          //     resources: [`${srcRoot}/components/styles/normalize.less`]
+          //   }
+          // },
         ]
       },
       {

@@ -1,26 +1,45 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-require("./style.scss");
+import cls from "classnames";
+import { LoadingIcon } from "../icon";
 const types = {
   success: "success",
   error: "error",
   warning: "warning",
   default: "default",
   primary: "primary",
-  link: "link"
+  link: "link",
+  info: "info"
 };
+
+const sizes = {
+  small: "small",
+  default: "default",
+  large: "large"
+};
+
 class Button extends Component {
   static propTypes = {
     type: PropTypes.oneOf(Object.values(types)),
     disabled: PropTypes.bool,
     block: PropTypes.bool,
     onClick: PropTypes.func,
-    href: PropTypes.string
+    href: PropTypes.string,
+    dashed: PropTypes.bool,
+    loading: PropTypes.bool,
+    hollow: PropTypes.bool,
+    circle: PropTypes.bool,
+    size: PropTypes.oneOf(Object.values(sizes))
   };
   static defaultProps = {
     type: types.default,
     disabled: false,
+    dashed: false,
     block: false,
+    loading: false,
+    hollow: false,
+    circle: false,
+    size: sizes.default,
     onClick: () => {}
   };
   render() {
@@ -31,6 +50,11 @@ class Button extends Component {
       block,
       onClick,
       href,
+      dashed,
+      loading,
+      hollow,
+      size,
+      circle,
       ...attr
     } = this.props;
     const isDisabled = disabled ? { disabled: true } : { onClick };
@@ -39,7 +63,8 @@ class Button extends Component {
         <a
           href={disabled ? "#" : href}
           disabled={disabled}
-          className="Button-link"
+          onClick={disabled  ? (e => e.preventDefault()) : ()=>{} }
+          className={cls("Button-link",{"Button-link-disabled":disabled})}
           {...attr}
         >
           {children}
@@ -47,15 +72,27 @@ class Button extends Component {
       );
     }
     return (
-      <div className={`Button ${block && "Button-block"}`}>
+      <div className={cls('Button', {"Button-block":block})}>
         <button
           type="button"
           {...isDisabled}
-          className={`btn btn-${type} ${disabled && "btn-disabled"} ${block &&
-            "btn-block"}`}
+          className={cls('btn',`btn-${type}`,
+          {
+            'btn-hollow': hollow,
+            'btn-disabled':disabled,
+            'btn-block':block,
+            'btn-dashed':dashed,
+            'btn-loading':loading,
+            [`btn-size-${size}`]: size !== sizes.default,
+            ['btn-circle']: circle
+          }
+        )}
           {...attr}
         >
-          {children}
+          {
+            loading && <LoadingIcon className="Button-loading"/>
+          }
+          <span>{children}</span>
         </button>
       </div>
     );

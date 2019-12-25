@@ -4,7 +4,7 @@ const fs = require("fs")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const components = path.resolve(__dirname, "../src/components");
-const mainFile = "style.scss"
+const mainFile = "style.less"
 //多入口
 function getEntry() {
 	let entryMap = {};
@@ -38,10 +38,10 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-        filename: '../lib/[name]/style.scss',
+        filename: '../lib/[name]/style.less',
     }),
     new MiniCssExtractPlugin({
-        filename: '../es/components/[name]/style.scss',
+        filename: '../es/components/[name]/style.less',
     })
   ],
   output: {

@@ -1,0 +1,88 @@
+.message{
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    cursor: pointer;
+    text-align: center;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 8px;
+    transform: translate3d(0,0,0);
+    border-radius: 6px;
+    width: 200px;
+    margin-left: -100px;
+}
+.message-open{
+    pointer-events: none;
+    animation: deer-fade-in .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.message-close{
+    animation: deer-fade-out .5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    pointer-events: none;
+}
+@keyframes deer-fade-in {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -40px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 20px, 0);
+    }
+  }
+  @keyframes deer-fade-out {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 20px, 0);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(0, -40px, 0);
+    }
+  }
+.message-success {
+    color: #fff;
+    border: 1px solid #2cc95b;
+    background: #2cc95b;
+}
+.message-error {
+    color: #fff;
+    background-color: #f93e3e;
+    border: 1px solid #f93e3e;
+}
+.message-warning {
+    color: #fff;
+    background-color: #fca130;
+    border: 1px solid #fca130;
+}
+.message-info {
+    color: #fff;
+    background-color: #61affe;
+    border: 1px solid #61affe;
+}
+.message-primary {
+  color: #fff;
+  background-color: #31c27c;
+  border: 1px solid #31c27c;
+  svg{
+    animation: deer-ui-spin 1.5s linear infinite;
+  }
+}
+.message-theme-dark{
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border:none
+}
+.message-icon{
+  margin-right: 10px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+@keyframes deer-ui-spin{
+  0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

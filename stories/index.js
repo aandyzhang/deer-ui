@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const { name, repository } = require("../package.json");
 import { FaGithub } from "react-icons/fa";
-// import Button from "../src/components/button";
+import Button from "../src/components/button";
 import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
 import startMd from './markdown/start.md'
@@ -17,8 +17,10 @@ storiesOf("综述", module)
           <FaGithub style={{ fontSize: 30, color: "#444" }} />
         </a>
       </h1>
-      <p>
-        <img src="https://cdn.lijinke.cn/logo.png" width={120} />
+      <p style={{fontSize:'100px',margin:'0px'}}>
+        🦌
+        {/* <img src="https://cdn.lijinke.cn/logo.png" width={120} />
+         */}
       </p>
       <p>
         <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
@@ -86,14 +88,8 @@ storiesOf("综述", module)
   ))
   .add("按钮", () => (
     <div>
-      {/* <Button>按钮</Button>
-      <Button type="success">按钮</Button> */}
-      <ReactMarkDown
-        source={startMd}
-        renderers={{
-          code: CodeBlock
-        }}
-      />
+      <Button>按钮</Button>
+      <Button type="success">按钮</Button>
     </div>
   ))
   .add("使用说明", () => (

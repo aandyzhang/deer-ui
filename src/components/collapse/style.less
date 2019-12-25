@@ -1,0 +1,61 @@
+
+@import "../styles/vars.less";
+
+@prefixCls : deer-ui-collapse;
+
+.@{prefixCls} {
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    font-size: @font-size;
+    position: relative;
+  
+  &-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid @border-color;
+    }
+    &-header {
+      padding: 15px 20px;
+      cursor: pointer;
+      color: fade(@font-color,80%);
+      background-color: @bg-color;
+      border-bottom-left-radius: @border-radius;
+      border-bottom-right-radius: @border-radius;
+      &-disabled {
+        color: @disabled-font-color;
+        cursor: not-allowed;
+      }
+    }
+    &-title {
+      margin-left: 10px;
+      display: inline-block;
+    }
+    &-icon {
+      display: inline-block;
+      svg {
+        transition:  @default-transition;
+      }
+      &-right {
+        float: right;
+      }
+      &-active {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &-content {
+      padding: 20px;
+      color: @font-color;
+      border-bottom-left-radius:  @border-radius;
+      border-bottom-right-radius:  @border-radius;
+      background: white;
+      overflow: hidden;
+      transition: all @collapse-animate-time;
+      &-hide {
+        padding-bottom: 0;
+        padding-top: 0;
+        height: 0;
+      }
+    }
+  }
+}

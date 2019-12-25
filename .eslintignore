@@ -4,6 +4,7 @@ node_modules
 .history
 dist
 lib
+es
 _site
 .docs
 .vscode

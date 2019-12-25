@@ -1,0 +1,77 @@
+.deer-ui-table{
+    width:100%;
+    font-size: 14px;
+    overflow: auto;
+    .deer-ui-table-header{
+        height: 55px;
+        border-bottom: 1px solid #e8e8e8;
+        display: flex;
+        font-weight: bold;
+        .deer-ui-table-header-td{
+            width: 100%;
+            padding: 16px;
+            text-align: left;       
+        }
+        .deer-ui-table-header-td-bordered{
+            border-left: 1px solid #e8e8e8;
+            border-top: 1px solid #e8e8e8;
+            &:last-child{
+                border-right: 1px solid #e8e8e8;
+            }
+        }
+    }
+    .deer-ui-table-header-noBottomLine{
+        border-bottom: none;
+    }
+    .deer-ui-table-header-hideHeader{
+        display: none;
+    }
+    .deer-ui-table-content{
+        .deer-ui-table-content-tr{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .deer-ui-table-content-td{
+                width: 100%;
+                padding: 16px;
+                text-align: left;  
+            }   
+
+            &:nth-child(odd){
+                background: white;
+            }
+            &:nth-child(even){
+                background: #eee;
+            } 
+        }
+        .deer-ui-table-content-tr-hover:hover{
+            background: #eef7f1;
+        }
+        .deer-ui-table-content-tr-bordered {
+            border-left: 1px solid #e8e8e8;
+            border-right: 1px solid #e8e8e8;
+            // border-bottom: 1px solid #e8e8e8;
+            .deer-ui-table-content-td-bordered{
+                // border-right: 1px solid #e8e8e8;
+                // border-bottom: 1px solid #e8e8e8;
+                &:last-child{
+                    border-right: none;
+                }
+            }
+        }
+        .deer-ui-table-empty{
+            display: flex;
+            background: #fff;
+            min-height: 300px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .deer-ui-table-empty-icon{
+                align-items: center;
+            }
+            .deer-ui-table-empty-content{
+                padding: 20px
+            }
+        }
+    }
+}

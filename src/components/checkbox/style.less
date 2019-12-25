@@ -1,0 +1,83 @@
+.Checkbox{
+    .Checkbox-wrapper{
+        cursor: pointer;
+        padding: 0px 10px;
+        .Checkbox-wrapper-content{
+            position: relative;
+            .Checkbox-checkbox{
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+            .Checkbox-inner{
+                display: inline-block;
+                transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                position: relative;
+                left: 0;
+                top: 2px;
+                border-radius: 2px;            
+                width: 16px;
+                height: 16px;
+                background: #fff;
+                border: 1px solid #e8e8e8;
+                margin-right: 10px;
+                &::after {
+                    //画一个矩形 旋转45° 形成一个 √
+                    transform: rotate(45deg) scale(0);
+                    position: absolute;
+                    left: 4px;
+                    top: 2px;
+                    display: table;
+                    width: 5px;
+                    height: 8px;
+                    border: 2px solid #fff;
+                    border-top: 0;
+                    border-left: 0;
+                    content: ' ';
+                    transition: all .1s cubic-bezier(.71, -0.46, .88, .6);
+                  }
+            }
+
+        }
+        .Checkbox-wrapper-content-checked {
+            .Checkbox-inner{
+                border-color: #31c27c;
+                background-color: #31c27c;
+                &::after{
+                    transform: rotate(45deg) scale(1);
+                }
+            }
+            &.Checkbox-wrapper-content-indeterminate{
+                .Checkbox-inner{
+                    border-color: #31c27c;
+                    background-color: #31c27c;
+                    &::after{
+                        width: 0;
+                        transform: rotate(90deg) scale(1) translate(1px, -2px);
+                    }
+                }
+            }
+        }
+    }
+    .Checkbox-wrapper-disabled{
+        .Checkbox-wrapper-content-checked{
+            .Checkbox-inner{
+                border-color: #e8e8e8 !important;
+                background-color: #f5f5f5 !important;
+                &::after{
+                    border-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+        cursor: not-allowed;
+        .Checkbox-inner{
+            border-color: #e8e8e8 !important;
+            background-color: #f5f5f5 !important;
+        }
+    }
+}
+
+.checkboxGroup{
+    display: flex;
+}
