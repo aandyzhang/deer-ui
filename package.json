@@ -35,7 +35,7 @@
     "ver:minor": "npm version minor",
     "ver:major": "npm version major",
     "pub:dev": "npm run ver:patch && npm run build && npm publish --registry https://registry.npmjs.org && git push",
-    "pub:prod": "npm run ver:minor && npm run build && npm publish --registry https://registry.npmjs.org && git push",
+    "pub:prod": "npm run ver:major && npm run build && npm publish --registry https://registry.npmjs.org && git push",
     "release": "standard-version"
   },
   "files": [
