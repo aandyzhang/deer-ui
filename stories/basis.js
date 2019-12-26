@@ -23,11 +23,11 @@ import {
 import Button from "../components/button";
 import Icon from "../components/icons";
 import CodeView from '../components/codeview'
-import "./style/button.less";
-import '../components/button/style.less'
-import '../components/icons/style.less'
+require("./style/button.less");
+require('../components/button/style.less');
+require('../components/icons/style.less');
 Icon.createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
+  scriptUrl: "https://at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
 });
 
 storiesOf("基础", module)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Tabs } from "../../src";
+import { Button, Tabs } from "../../components";
 // require("./index.css");
 const TabPane  = Tabs.TabPane
 function App() {

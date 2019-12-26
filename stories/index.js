@@ -2,11 +2,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const { name, repository } = require("../package.json");
 import { FaGithub } from "react-icons/fa";
-import Button from "../components/button";
 import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
 import startMd from './markdown/start.md'
-
+require('./style/index.less');
 storiesOf("综述", module)
   .add("介绍", () => (
     <article style={{ padding: 20 }}>
@@ -19,58 +18,52 @@ storiesOf("综述", module)
       </h1>
       <p style={{fontSize:'100px',margin:'0px'}}>
         🦌
-        {/* <img src="https://cdn.lijinke.cn/logo.png" width={120} />
-         */}
       </p>
       <p>
-        <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
+        <a href="https://www.npmjs.com/package/deer-ui" title="npm">
           <img
-            src="https://img.shields.io/npm/dm/cuke-ui.svg?style=for-the-badge"
+            src="https://img.shields.io/npm/dm/deer-ui.svg?style=for-the-badge"
             alt="npm"
           />
         </a>
         {"  "}
-        <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
-          <img src="https://img.shields.io/github/issues/cuke-ui/cuke-ui.svg?style=for-the-badge" />
+        <a href="https://isitmaintained.com/project/zhangboyang123/deer-ui">
+          <img src="https://img.shields.io/github/issues/zhangboyang123/deer-ui.svg?style=for-the-badge" />
         </a>
         {"  "}
-        <a href="https://github.com/cuke-ui/cuke-ui">
-          <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=for-the-badge" />
+        <a href="https://github.com/deer-ui/deer-ui">
+          <img src="https://img.shields.io/github/stars/zhangboyang123/deer-ui.svg?style=for-the-badge" />
         </a>
       </p>
-
+      <h3>🦌 deer-ui 一个简单高效轻量级的React组件库</h3>
       <h2>当前版本</h2>
       <p>
-        <a href="https://badge.fury.io/js/cuke-ui" title="npm">
+        <a href="https://badge.fury.io/js/deer-ui" title="npm">
           <img
-            src="https://img.shields.io/npm/v/cuke-ui.svg?style=for-the-badge"
+            src="https://img.shields.io/npm/v/deer-ui.svg?style=for-the-badge"
             alt="npm version"
           />
         </a>
       </p>
-
-      <h2>在线示例</h2>
-      <iframe
-        src="https://codesandbox.io/embed/nn6yr2m94?autoresize=1&hidenavigation=1"
-        style={{
-          width: "100%",
-          height: "500px",
-          border: 0,
-          borderRadius: "4px",
-          overflow: "hidden"
-        }}
-        sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-      />
-
-      <h2>名字由来</h2>
+      <h2>问题</h2>
       <p>
-        cuke(黄瓜), 常见的一种蔬菜,
-        希望这个项目也成为常见的一个依赖(虽然这是不可能的), 其中黄瓜也符合
-        这个组件库的 宗旨 : 即插即用 其次 cuke 谐音 (cool ke) 很酷的李金珂的
-        意思 主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的 Ant
-        Design, 抱着学习的目的,开发了这个组件库,
-        所以建议不要用于生产环境,可能心情不好就不维护了
+        如果你在使用deer-ui时遇到了问题,
+        欢迎 给我提
+        <a href="https://github.com/zhangboyang123/deer-ui/issues"> Issue</a> 或{" "}
+        <a href="https://github.com/zhangboyang123/deer-ui/pulls">Pull Request</a>
       </p>
+
+      <h2>设计和组件交互</h2>
+      <p>高仿 Ant-Design </p>
+      <h2>谁在使用</h2>
+      <ul>
+        <li> - 我自己 </li>
+        <li> - 快乐风男 </li>
+        <li>
+          {" "}
+          - <a href="https://www.webfamily.cn">自己开源cms系统</a>
+        </li>
+      </ul>
 
       <h2>参考轮子</h2>
       <ul>
@@ -78,19 +71,16 @@ storiesOf("综述", module)
           <a href="https://github.com/ant-design/ant-design">Ant-Design</a>
         </li>
         <li>
-          <a href="https://github.com/FrankFang/gulu">gulu</a>
+          <a href="https://github.com/cuke-ui/cuke-ui">cuku-ui</a>
         </li>
         <li>
-          <a href="https://github.com/JeromeLin/dragon-ui">dragon-ui</a>
+          <a href="https://github.com/JeromeLin/zarm-web">zarm-web</a>
+        </li>
+        <li>
+          <a href="">vant</a>
         </li>
       </ul>
     </article>
-  ))
-  .add("按钮", () => (
-    <div>
-      <Button>按钮</Button>
-      <Button type="success">按钮</Button>
-    </div>
   ))
   .add("使用说明", () => (
     <div className="change-log">

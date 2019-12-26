@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Lowlight from "react-lowlight";
 import js from "highlight.js/lib/languages/javascript";
+import Message from '../message'
+require('../button/style.less')
 // 内置了很多 颜色主题
 
 // require('./style.less')
@@ -60,6 +62,6 @@ export default class CodeView extends React.PureComponent {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    alert('复制成功')
+    Message.success('复制成功');
   }
 }

@@ -8,12 +8,12 @@ import {
   UserIcon,
   WarningIcon
 } from "../components/icon";
-import "../components/collapse/style.less";
-import "../components/tabs/style.less";
-import "../components/empty/style.less";
-import "../components/table/style.less";
-import "../components/notFound/style.less";
-import "../components/codeview/style.less";
+require("../components/collapse/style.less");
+require("../components/tabs/style.less");
+require("../components/empty/style.less");
+require("../components/table/style.less");
+require("../components/notFound/style.less");
+require("../components/codeview/style.less");
 const columns = [
   {
     title: "序号",
