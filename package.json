@@ -1,6 +1,6 @@
 {
   "name": "deer-ui",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "React.js UI components for PC Web",
   "repository": "https://github.com/zhangboyang123/deer-ui",
   "homepage": "https://zhangboyang123.github.io/",
@@ -201,6 +201,7 @@
     "rimraf": "^3.0.0",
     "sass-loader": "^8.0.0",
     "sass-resources-loader": "^2.0.1",
+    "standard-version": "^7.0.1",
     "style-loader": "^1.0.0",
     "stylelint": "^11.1.1",
     "stylelint-config-standard": "^19.0.0",
