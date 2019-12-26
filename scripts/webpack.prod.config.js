@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const srcRoot = path.resolve(__dirname, "../src");
+const srcRoot = path.resolve(__dirname, "../components");
 const buildPath = path.resolve(__dirname, "../dist");
 
 const {  name } = require("../package.json");
@@ -12,7 +12,7 @@ const {  name } = require("../package.json");
 module.exports = {
   mode: "production",
   entry: {
-    [name]: ["./src/index.js"]
+    [name]: ["./components/index.js"]
   },
   output: {
     path: path.join(process.cwd(), "dist"),
@@ -35,7 +35,7 @@ module.exports = {
             loader: "babel-loader"
           }
         ],
-        include: [path.resolve("src")]
+        include: [path.resolve("components")]
       },
       {
         test: /\.s?css$/,

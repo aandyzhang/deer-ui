@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const components = path.resolve(__dirname, "../src/components");
+const components = path.resolve(__dirname, "../components");
 const mainFile = "style.less"
 //多入口
 function getEntry() {

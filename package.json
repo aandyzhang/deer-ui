@@ -11,11 +11,11 @@
     "clean": "rimraf dist lib es",
     "styleguidist": "styleguidist server",
     "styleguidist:build": "styleguidist build",
-    "stylelint": "stylelint 'src/**/*.less'",
-    "stylelint:fix": "stylelint 'src/**/*.less' --syntax less --fix",
-    "eslint": "eslint ./src/components",
-    "eslint:fix": "eslint ./src/components --fix",
-    "lint": "prettier --write \"src/components/**/*.js\" && npm run eslint:fix && npm run stylelint:fix",
+    "stylelint": "stylelint 'components/**/*.less'",
+    "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
+    "eslint": "eslint ./components",
+    "eslint:fix": "eslint ./components --fix",
+    "lint": "prettier --write \"components/**/*.js\" && npm run eslint:fix && npm run stylelint:fix",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
     "deploy": "./scripts/deploy.sh",
@@ -26,8 +26,8 @@
     "build:css-web": "webpack --config scripts/webpack.css.config.js --progress",
     "build:css": "cd scripts && gulp",
     "build:umd": "webpack --config scripts/webpack.prod.config.js --progress",
-    "build:es": "babel src -d es --ignore **/__tests__",
-    "build:lib": "cross-env OUTPUT_MODULE=commonjs babel src -d lib --ignore **/__tests__",
+    "build:es": "babel components -d es --ignore **/__tests__",
+    "build:lib": "cross-env OUTPUT_MODULE=commonjs babel components -d lib --ignore **/__tests__",
     "build": "npm run clean && npm run build:umd && npm run build:es && npm run build:lib && npm run build:css",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
@@ -56,7 +56,7 @@
       "eslint --fix",
       "git add"
     ],
-    "src/components/**/*.less": [
+    "components/**/*.less": [
       "stylelint --syntax less --fix",
       "git add"
     ]
@@ -137,6 +137,7 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
+    "@semantic-release/changelog": "^3.0.6",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-info": "^5.2.5",
@@ -161,6 +162,7 @@
     "copy-webpack-plugin": "^5.0.4",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
+    "cz-conventional-changelog": "^3.0.2",
     "docz": "^2.0.0-rc.70",
     "docz-plugin-css": "^0.11.0",
     "docz-theme-default": "^1.2.0",

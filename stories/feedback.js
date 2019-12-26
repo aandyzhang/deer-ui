@@ -1,18 +1,18 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { CodeView, Spin, Message,Button } from "../src";
+import { CodeView, Spin, Message,Button } from "../components";
 import {
   SuccessIcon,
   CloseIcon,
   UserIcon
   //   WarningIcon
-} from "../src/components/icon";
+} from "../components/icon";
 import './style/feedback.less';
-import "../src/components/button/style.less";
-import "../src/components/spin/style.less";
-import "../src/components/message/style.less";
-import "../src/components/codeview/style.less";
-import "../src/components/codeview/style.less";
+import "../components/button/style.less";
+import "../components/spin/style.less";
+import "../components/message/style.less";
+import "../components/codeview/style.less";
+import "../components/codeview/style.less";
 storiesOf("操作反馈", module)
   .add("Spin 加载中", () => (
     <div>

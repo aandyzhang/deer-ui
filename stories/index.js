@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 const { name, repository } = require("../package.json");
 import { FaGithub } from "react-icons/fa";
-import Button from "../src/components/button";
+import Button from "../components/button";
 import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
 import startMd from './markdown/start.md'

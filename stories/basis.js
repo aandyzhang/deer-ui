@@ -19,13 +19,13 @@ import {
   CalendarIcon,
   CloseCircleIcon,
   ErrorIcon
-} from "../src/components/icon";
-import Button from "../src/components/button";
-import Icon from "../src/components/icons";
-import CodeView from '../src/components/codeview'
+} from "../components/icon";
+import Button from "../components/button";
+import Icon from "../components/icons";
+import CodeView from '../components/codeview'
 import "./style/button.less";
-import '../src/components/button/style.less'
-import '../src/components/icons/style.less'
+import '../components/button/style.less'
+import '../components/icons/style.less'
 Icon.createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
 });

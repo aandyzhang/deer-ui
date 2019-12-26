@@ -14,13 +14,13 @@ const sourcemaps = require("gulp-sourcemaps");
 const rename = require("gulp-rename");
 const { name,browserList } = require("../package.json");
 const DIR = {
-  less: path.resolve(__dirname, "../src/components/**/*.less"),
+  less: path.resolve(__dirname, "../components/**/*.less"),
   buildSrc: [
-    path.resolve(__dirname, "../src/components/**/styles.less"),
-    path.resolve(__dirname, "../src/components/**/index.less")
+    path.resolve(__dirname, "../components/**/style.less"),
+    path.resolve(__dirname, "../components/**/index.less")
   ],
-  lib: path.resolve(__dirname, "../lib/components"),
-  es: path.resolve(__dirname, "../es/components"),
+  lib: path.resolve(__dirname, "../lib"),
+  es: path.resolve(__dirname, "../es"),
   dist: path.resolve(__dirname, "../dist")
 };
 

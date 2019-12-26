@@ -1,7 +1,7 @@
 // const webpack = require("webpack");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const srcRoot = path.resolve(__dirname, "../src");
+const srcRoot = path.resolve(__dirname, "../components");
 
 module.exports = {
   mode: "development",

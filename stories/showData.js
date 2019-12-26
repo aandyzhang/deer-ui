@@ -1,19 +1,19 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Tabs, CodeView, Collapse, Icon, Empty, Button, Table,Divider,NotFound } from "../src";
+import { Tabs, CodeView, Collapse, Icon, Empty, Button, Table,Divider,NotFound } from "../components";
 const TabPane = Tabs.TabPane;
 import {
   SuccessIcon,
   CloseIcon,
   UserIcon,
   WarningIcon
-} from "../src/components/icon";
-import "../src/components/collapse/style.less";
-import "../src/components/tabs/style.less";
-import "../src/components/empty/style.less";
-import "../src/components/table/style.less";
-import "../src/components/notFound/style.less";
-import "../src/components/codeview/style.less";
+} from "../components/icon";
+import "../components/collapse/style.less";
+import "../components/tabs/style.less";
+import "../components/empty/style.less";
+import "../components/table/style.less";
+import "../components/notFound/style.less";
+import "../components/codeview/style.less";
 const columns = [
   {
     title: "序号",
