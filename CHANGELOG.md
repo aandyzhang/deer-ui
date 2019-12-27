@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/zhangboyang123/deer-ui/compare/v1.1.0...v1.1.1) (2019-12-27)
+
+
+### Bug Fixes
+
+* 🐛 修改打包命令，修复调试环境样式问题，修改readme ([1b2fe67](https://github.com/zhangboyang123/deer-ui/commit/1b2fe673f836d52fa5328db9443ae95afe5760f1))
+
 ## [1.1.0](https://github.com/zhangboyang123/deer-ui/compare/v1.0.1...v1.1.0) (2019-12-26)
 
 
