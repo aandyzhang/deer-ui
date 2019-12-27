@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Tabs } from "../../components";
-// require("./index.css");
 const TabPane  = Tabs.TabPane
+import '../../components/button/style.less'
+import '../../components/Tabs/style.less'
 function App() {
   return (
     <div className="App">

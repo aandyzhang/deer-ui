@@ -128,7 +128,7 @@ module.exports = {
 
 - 快乐风男
 - 我自己
-- [自己的cms系统](https://www.webfamily.cn)
+- [自己开源cms后台系统](https://www.webfamily.cn)
 
 ## 参考轮子
 
@@ -157,7 +157,7 @@ npm install --registry https://registry.npm.taobao.org
 
 ```js
 1.第一种
-  源码中搭建了一个react环境，在examplewe文件夹下，使用npm run dev，即可打开调试环境，引入编写的组件即可.
+  源码中搭建了一个react环境，在example文件夹下，使用npm run dev，即可打开调试环境，引入编写的组件即可.
 2.第二种
   源码中搭建了一套组件库的文档部署环境，使用命令npm run storybook，即可进入文档模式，引入编写的组件即可.
   
@@ -185,9 +185,11 @@ export { default as Button } from './button';
 
 框架提供了自动化发布命令，打包，发版，lint,日志等功能，命令如下
 ```js
-npm run pub:dev    //自动完成css，js,es,lin,umd打包，自动生成changelog,发布npm仓库，是打修订号
+npm run pub:prod    //自动完成css，js,es,lin,umd打包，自动生成changelog,发布npm仓库，为修订版版本号。1.0.*
 
-npm run pub:prod  //都会完成上述不同，唯一区别是，打的npm版本号不同，此命令是打主版本号，不经常用
+npm run pub:major  //都会完成上述不同，唯一区别是，打的npm版本号不同，此命令是打主版本号，不经常用 *.0.0
+
+npm run pub:minor  //都会完成上述不同，唯一区别是，打的npm版本号不同，此命令是打次版本号，不经常用 1.*.0
 
 发布组件库文档，框架提供两种方式
 
@@ -199,5 +201,7 @@ npm run pub:prod  //都会完成上述不同，唯一区别是，打的npm版本
 版本号区别查看文章[npm如何管理依赖包的版本](https://www.jianshu.com/p/1470c5d7b8c3)
 ##  License
 
+5.CHANGELOG
+[CHANGELOG](https://github.com/zhangboyang123/deer-ui/blob/master/CHANGELOG.md)
 [MIT](https://github.com/zhangboyang123/deer-ui/blob/master/LICENSE)
 

@@ -1,6 +1,4 @@
-// const webpack = require("webpack");
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const srcRoot = path.resolve(__dirname, "../components");
 
 module.exports = {
@@ -31,13 +29,10 @@ module.exports = {
             loader: "babel-loader"
           }
         ]
-        // include: srcRoot,
       },
       {
         test: /\.s?css$/,
         use: [
-          //  MiniCssExtractPlugin.loader,
-          // ""
           "style-loader",
           "cache-loader",
           {
@@ -57,12 +52,12 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-         MiniCssExtractPlugin.loader,
+          "style-loader",
           "cache-loader",
           {
             loader: "css-loader",
             options: {
-              importLoaders: 3,
+              importLoaders: 2,
             }
           },
           {
