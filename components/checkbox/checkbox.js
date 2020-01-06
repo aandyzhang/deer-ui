@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
-// require("./style.less");
+import cls from "classnames";
 
 class Checkbox extends PureComponent {
   static propTypes = {
@@ -57,11 +56,11 @@ class Checkbox extends PureComponent {
     const { checked } = this.state;
     return (
       <div className="Checkbox">
-        <label className={classNames("Checkbox-wrapper",{
+        <label className={cls("Checkbox-wrapper",{
             "Checkbox-wrapper-disabled": disabled
         })}>
           <span
-            className={classNames("Checkbox-wrapper-content", {
+            className={cls("Checkbox-wrapper-content", {
               "Checkbox-wrapper-content-checked": checked,
               "Checkbox-wrapper-content-indeterminate": checked && indeterminate
             })}

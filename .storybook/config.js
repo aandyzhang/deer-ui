@@ -1,8 +1,6 @@
 import React from "react";
 import { configure, addDecorator,addParameters } from '@storybook/react';
 const { name, repository, version } = require("../package.json")
-import { withInfo } from '@storybook/addon-info';
-import { withNotes } from '@storybook/addon-notes';
 import { configureActions } from '@storybook/addon-actions';
 import '@storybook/addon-console';
 import '@storybook/addon-options/register';
@@ -23,6 +21,9 @@ function loadStories() {
 configureActions({
   depth: 100
 })
+
+
+//加载配置
 addParameters({
   options: {
     name: `${name} v${version}`,
@@ -36,14 +37,6 @@ addParameters({
     hierarchyRootSeparator: null,
     showAddonPanel: false,
   }})
-
-addDecorator(withInfo({
-  header: true,
-  maxPropsIntoLine: 100,
-  maxPropObjectKeys: 100,
-  maxPropArrayLength: 100,
-  maxPropStringLength: 100,
-}))
-addDecorator(withNotes);
+//中间content边距
 addDecorator(story => <div style={{ padding: "0 60px 50px" }}>{story()}</div>)
 configure(loadStories, module);

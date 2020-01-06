@@ -1,13 +1,22 @@
-.codeView{
-    font-size: 14px;
-    white-space:pre;
+@import '../styles/themes.less';
+
+@prefixCls: deer-ui-code-view;
+
+.@{prefixCls}{
+    font-size: @codeView-default-font-size;
+    white-space: pre;
     position: relative;
     .toggle{
-        border: 1px solid #31c27c;
+        border: 1px solid @codeView-default-border-color;
         cursor: pointer;
         padding: 10px 0px;
         text-align: center;
-        border-radius: 10px;
+        border-radius: @codeView-default-border-radius;
+        .codeView-icon{
+            font-size: 24px;
+            vertical-align: -7px;
+            margin-left: 10px;
+        }
     }
     .copy{
         position: absolute;
@@ -21,13 +30,13 @@
     }
 }
 .hljs{
-line-height: 1.8;
-font-family: Menlo,Monaco,Consolas,Courier,monospace;
-font-size: 12px;
-padding: 18px 24px;
-background-color: #fafafa;
-border: 1px solid #eaeefb;
-margin-bottom: 25px;
-border-radius: 4px;
--webkit-font-smoothing: auto;
+    line-height: 1.8;
+    font-family: Menlo,Monaco,Consolas,Courier,monospace;
+    font-size: 12px;
+    padding: 18px 24px;
+    background-color: #fafafa;
+    border: 1px solid #eaeefb;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    -webkit-font-smoothing: auto;
 }

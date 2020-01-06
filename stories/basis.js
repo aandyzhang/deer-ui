@@ -26,6 +26,7 @@ import CodeView from '../components/codeview'
 require("./style/button.less");
 require('../components/button/style.less');
 require('../components/icons/style.less');
+require('../components/codeview/style.less')
 Icon.createFromIconfontCN({
   scriptUrl: "https://at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
 });
@@ -34,7 +35,6 @@ storiesOf("基础", module)
   .add("Button 按钮", () => (
     <div className="deer-button">
       <h2>基本使用</h2>
-
       <Button onClick={action("clicked")}>默认</Button>
 
       <Button type="primary" onClick={action("clicked")}>
@@ -44,7 +44,6 @@ storiesOf("基础", module)
       <Button type="info" onClick={action("clicked")}>
         信息
       </Button>
-
       <Button type="warning" onClick={action("clicked")}>
         警告
       </Button>
@@ -52,15 +51,13 @@ storiesOf("基础", module)
       <Button type="error" onClick={action("clicked")}>
         错误
       </Button>
-
       <Button type="success" onClick={action("clicked")}>
         成功
       </Button>
-
       <Button disabled onClick={action("clicked")}>
         禁用
       </Button>
-
+      <br/>
       <Button type="info" dashed onClick={action("clicked")}>
         虚线
       </Button>
@@ -72,7 +69,49 @@ storiesOf("基础", module)
       <Button type="primary" block onClick={action("clicked")}>
         100%
       </Button>
+      <div style={{margin: "20px 0px"}}>
+      <CodeView
+        value={`
+      import { Button } from 'deer-ui';
 
+      <Button onClick={action("clicked")}>
+        默认
+      </Button>
+
+      <Button type="primary" onClick={action("clicked")}>
+        主色调
+      </Button>
+
+      <Button type="info" onClick={action("clicked")}>
+        信息
+      </Button>
+      <Button type="warning" onClick={action("clicked")}>
+        警告
+      </Button>
+
+      <Button type="error" onClick={action("clicked")}>
+        错误
+      </Button>
+      <Button type="success" onClick={action("clicked")}>
+        成功
+      </Button>
+      <Button disabled onClick={action("clicked")}>
+        禁用
+      </Button>
+      <br/>
+      <Button type="info" dashed onClick={action("clicked")}>
+        虚线
+      </Button>
+
+      <Button type="primary" loading={true} onClick={action("clicked")}>
+        加载中
+      </Button>
+
+      <Button type="primary" block onClick={action("clicked")}>
+        100%
+      </Button>`}
+      ></CodeView>
+      </div>
       <h2>空心按钮</h2>
 
       <Button onClick={action("clicked")}>默认</Button>
@@ -99,11 +138,10 @@ storiesOf("基础", module)
       <Button type="error" hollow disabled onClick={action("clicked")}>
         禁用
       </Button>
-
+      <br/>
       <Button type="info" hollow dashed onClick={action("clicked")}>
         虚线
       </Button>
-
       <Button type="primary" hollow loading={true} onClick={action("clicked")}>
         加载中
       </Button>
@@ -111,6 +149,27 @@ storiesOf("基础", module)
       <Button type="primary" hollow block onClick={action("clicked")}>
         100%
       </Button>
+
+        <CodeView value={`
+          import { Button } from 'deer-ui';
+          
+          1. 空心状态属性为hollow
+          <Button type="error" hollow onClick={action("clicked")}>
+            错误
+          </Button>
+          2.加载中的属性为 loading，可开启关闭
+          <Button type="primary" hollow loading={true} onClick={action("clicked")}>
+            加载中
+          </Button>
+          3.按钮虚线属性 dashed
+          <Button type="info" hollow dashed onClick={action("clicked")}>
+            虚线
+          </Button>
+          4.按钮宽度为和父类宽度一致
+          <Button type="info" block onClick={action("clicked")}>
+            100%
+          </Button>
+        `}></CodeView>
 
       <h2>禁用状态</h2>
       <Button disabled onClick={action("clicked")}>
@@ -169,7 +228,14 @@ storiesOf("基础", module)
         {" "}
         成功{" "}
       </Button>
-
+      <div style={{margin: "20px 0px"}}>
+        <CodeView value={`
+          import { Button } from 'deer-ui'
+          <Button type="success"  disabled onClick={action("clicked")}>
+            成功
+          </Button>
+        `}></CodeView>
+      </div>
       <h2>三种大小</h2>
 
       <Button type="primary" size="large">
@@ -181,7 +247,15 @@ storiesOf("基础", module)
       <Button type="primary" size="small">
         small
       </Button>
-
+      <div style={{margin: "20px 0px"}}>
+        <CodeView value={`
+          import { Button } from 'deer-ui';
+          <Button type="primary" size="large">large</Button>
+          <Button type="primary">default</Button>
+          <Button type="primary" size="small">small</Button>
+        `}>
+        </CodeView>
+      </div>
       <h2>圆形按钮及自定义图标</h2>
 
       <Button type="primary" circle>
@@ -229,8 +303,17 @@ storiesOf("基础", module)
       <Button type="primary" circle size="large">
         大
       </Button>
-
-      <h2>链接</h2>
+      <div style={{margin: "20px 0px"}}>
+        <CodeView value={`
+          import { Button } from 'deer-ui';
+          <Button type="primary" circle>圆形</Button>
+          //自定义图标
+          <Button type="info" circle>
+            <InfoIcon />
+          </Button>
+        `}>
+        </CodeView>
+      </div>
       <Button href="#">麋鹿</Button>
       <Button type="primary" href="https://github.com/zhangboyang123/deer-ui">
         GitHub
@@ -238,6 +321,20 @@ storiesOf("基础", module)
       <Button href="#" disabled>
         禁用
       </Button>
+      <div style={{margin: "20px 0px"}}>
+        <CodeView value={`
+          import { Button } from 'deer-ui';
+          //锚点链接
+          <Button href="#">麋鹿</Button>
+          <Button type="primary" href="https://github.com/zhangboyang123/deer-ui">
+            GitHub
+          </Button>
+          <Button href="#" disabled>
+            禁用
+          </Button>
+        `}>
+        </CodeView>
+      </div>
     </div>
   ))
   .add("Icon图标", () => (

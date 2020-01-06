@@ -20,6 +20,7 @@ const sizes = {
 
 class Button extends Component {
   static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
     type: PropTypes.oneOf(Object.values(types)),
     disabled: PropTypes.bool,
     block: PropTypes.bool,
@@ -32,8 +33,10 @@ class Button extends Component {
     size: PropTypes.oneOf(Object.values(sizes))
   };
   static defaultProps = {
+    prefixCls: "deer-ui-button",
     type: types.default,
     disabled: false,
+    href: "",
     dashed: false,
     block: false,
     loading: false,
@@ -46,6 +49,7 @@ class Button extends Component {
     const {
       type,
       children,
+      prefixCls,
       disabled,
       block,
       onClick,
@@ -55,6 +59,7 @@ class Button extends Component {
       hollow,
       size,
       circle,
+      className,
       ...attr
     } = this.props;
     const isDisabled = disabled ? { disabled: true } : { onClick };
@@ -64,7 +69,7 @@ class Button extends Component {
           href={disabled ? "#" : href}
           disabled={disabled}
           onClick={disabled  ? (e => e.preventDefault()) : ()=>{} }
-          className={cls("Button-link",{"Button-link-disabled":disabled})}
+          className={cls(`${prefixCls}-link`,{[`${prefixCls}-link-disabled`]:disabled})}
           {...attr}
         >
           {children}
@@ -72,11 +77,11 @@ class Button extends Component {
       );
     }
     return (
-      <div className={cls('Button', {"Button-block":block})}>
+      <div className={cls(prefixCls, {[`${prefixCls}-block`]:block})}>
         <button
           type="button"
           {...isDisabled}
-          className={cls('btn',`btn-${type}`,
+          className={cls(`${prefixCls}-btn`,className,`${prefixCls}-btn-${type}`,
           {
             'btn-hollow': hollow,
             'btn-disabled':disabled,
@@ -90,7 +95,7 @@ class Button extends Component {
           {...attr}
         >
           {
-            loading && <LoadingIcon className="Button-loading"/>
+            loading && <LoadingIcon className={`${prefixCls}-loading`}/>
           }
           <span>{children}</span>
         </button>

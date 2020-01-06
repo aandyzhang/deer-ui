@@ -1,0 +1,22 @@
+.deer-ui-button-theme-color-hover(@color: @default-color,@lighten: 5%, @font-color: #fff){
+      border: 1px solid @color;
+      background-color: lighten(@color, @lighten);
+      color: lighten(@font-color, @lighten);
+      &.deer-ui-button-btn-default {
+        &:active,
+        &:focus {
+          border: 1px solid @primary-color;
+          color: lighten(@primary-color, @lighten);
+        }
+      }
+}
+
+// 空心样式
+.deer-ui-button-theme-color-hollow(@color,@lighten: 5%){
+    color: @color;
+    background-color: transparent;
+    text-shadow: unset;
+    &.btn-dashed {
+      border: 1px dashed @color;
+    }
+}

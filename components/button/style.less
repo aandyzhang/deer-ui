@@ -1,165 +1,155 @@
-.Button {
+
+@import "../styles/themes.less";
+@import "../styles/mixins.less";
+@import "../styles/animate.less";
+
+@prefixCls : deer-ui-button;
+
+.@{prefixCls} {
   display: inline-block;
-  .btn {
+  &-btn {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 0 30px;
-    font-size: 14px;
-    height: 40px;
+    padding: @button-default-padding;
+    font-size: @button-default-font-size;
+    height: @button-default-height;
     touch-action: manipulation;
     white-space: nowrap;
     background-image: none;
     text-align: center;
-    border-radius: 5px;
+    border-radius: @button-default-border-radius;
     text-shadow: none;
     vertical-align: middle;
     &.btn-size-small{
-      font-size: 12px;
-      padding: 0 10px;
-      height: 30px;  
+      font-size: @button-small-font-size;
+      padding: @button-small-padding;
+      height: @button-small-height;  
     }
     &.btn-size-large{
-      font-size: 16px;
-      padding: 0 40px;
-      height: 50px;
+      font-size: @button-large-font-size;
+      padding: @button-large-padding;
+      height: @button-large-height;  
     }
-    &.btn-default {
-      color: rgba(0, 0, 0, 0.65);
+    &-default {
+      color: @font-color;
       background-color: #fff;
-      border: 1px solid #d9d9d9;
-      &.btn-circle {
+      border: 1px solid @default-color;
+      text-shadow: none;
+      &-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-primary {
-      color: #fff;
-      background-color: #31c27c;
-      border: 1px solid #31c27c;
+    &-primary {
+      .deer-ui-button-theme-color-hover(@primary-color);
       &.btn-hollow {
-        color: #31c27c;
+        .deer-ui-button-theme-color-hollow(@primary-color);
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-link {
+    &-link {
       background-color: transparent;
       height: auto;
       padding: 0 5px;
-      font-size: 14px;
       white-space: nowrap;
       text-align: center;
       text-decoration: none;
-      color: #31c27c;
+      color: @primary-color;
       &.btn-hollow {
-        color: #31c27c;
+        color: @primary-color;
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-warning {
-      color: #fff;
-      background-color: #fca130;
-      border: 1px solid #fca130;
+    &-warning {
+      .deer-ui-button-theme-color-hover(@warning-color);
+      // color: #fff;
+      // background-color: #fca130;
+      // border: 1px solid #fca130;
       &.btn-hollow {
-        color: #fca130;
+        .deer-ui-button-theme-color-hollow(@warning-color);
+        // color: #fca130;
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-info {
-      color: #fff;
-      background-color: #61affe;
-      border: 1px solid #61affe;
+    &-info {
+      .deer-ui-button-theme-color-hover(@info-color);
       &.btn-hollow {
-        color: #61affe;
+        .deer-ui-button-theme-color-hollow(@info-color);
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-error {
-      color: #fff;
-      background-color: #f93e3e;
-      border: 1px solid #f93e3e;
+    &-error {
+      .deer-ui-button-theme-color-hover(@error-color);
       &.btn-hollow {
-        color: #f93e3e;
+        .deer-ui-button-theme-color-hollow(@error-color);
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
-    &.btn-success {
-      color: #fff;
-      background-color: #35c613;
-      border: 1px solid #35c613;
+    &-success {
+      .deer-ui-button-theme-color-hover(@success-color);
       &.btn-hollow {
-        color: #35c613;
+        .deer-ui-button-theme-color-hollow(@success-color);
       }
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
     &.btn-disabled {
       cursor: not-allowed;
-      opacity: 0.6;
-      // color: #fff;
-      // background-color: #f5f5f5;
-      // border: 1px solid #f5f5f5;
-      // border: 1px solid #e8e8e8;
-      // color: rgba(0, 0, 0, 0.25) !important;
-      // &.btn-hollow {
-      //   border: 1px dashed #f93e3e;
-      // }
+      opacity: @button-disabled-opacity;
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
     &.btn-block {
-      // display: block;
       width: 100%;
     }
+
     &.btn-dashed {
-      border: 1px dashed #e8e8e8;
-      &.btn-hollow {
-        border: 1px dashed #61affe;
-      }
+      border: 1px dashed @border-color;
       &.btn-circle {
         border-radius: 50%;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: @button-default-width;
+        height: @button-default-height;
       }
     }
     &.btn-loading {
-      opacity: 0.7;
+      opacity: @button-disabled-opacity;
       cursor: not-allowed;
     }
     &.btn-hollow {
@@ -167,35 +157,23 @@
       text-shadow: unset;
     }
   }
-  &.Button-block {
+  &-block {
     width: 100%;
   }
-  .Button-loading {
+  &-loading {
     margin-right: 10px;
     vertical-align: -1px;
-    animation:  deer-spin 1s linear infinite;
+    animation:  deer-ui-spin @loading-time linear infinite;
   }
-}
-
-@keyframes deer-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.Button-link {
-  // display: block;
-  padding: 0 5px;
-  font-size: 14px;
-  white-space: nowrap;
-  text-align: center;
-  text-decoration: none;
-  color: #31c27c;
-  &.Button-link-disabled{
-    cursor: not-allowed;
-    color: rgba(0, 0, 0, 0.25);
+  &-link {
+    padding: 0 5px;
+    font-size: @button-default-font-size;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    &-disabled{
+      cursor: not-allowed;
+      color: @disabled-font-color;
+    }
   }
 }
