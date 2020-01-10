@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/zhangboyang123/deer-ui/compare/v1.1.1...v1.1.2) (2020-01-10)
+
+
+### Features
+
+* 🎸 增加主题定制功能，抽离公共组件样式，增加checbox，divider组件，完善组件库文档和readme ([d9c39e8](https://github.com/zhangboyang123/deer-ui/commit/d9c39e8ae08aec3acd67fafc816aef7da9d13c4e))
+
 ### [1.1.1](https://github.com/zhangboyang123/deer-ui/compare/v1.1.0...v1.1.1) (2019-12-27)
 
 
