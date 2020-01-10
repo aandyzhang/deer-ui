@@ -30,9 +30,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 * 🐛 修复message组件z-index,调整发版命令 ([8e74ed8](https://github.com/zhangboyang123/deer-ui/commit/8e74ed8c6e48fe2dd862f6dac24b3e500d6644fa))
 
-### [0.1.2](https://github.com/zhangboyang123/deer-ui/compare/v0.1.1...v0.1.2) (2019-12-26)
-
-## [0.1.0](https://github.com/zhangboyang123/deer-ui/compare/v0.0.4...v0.1.0) (2019-12-26)
 
 
 ### ⚠ BREAKING CHANGES
