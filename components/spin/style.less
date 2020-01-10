@@ -1,14 +1,19 @@
-.Spin-container{
+@import '../styles/themes.less';
+@import '../styles/animate.less';
+
+@prefixCls: deer-ui-spin;
+
+.@{prefixCls}{
     position: relative;
     height: 100%;
-    .Spin-blur{
+    .@{prefixCls}-blur{
         overflow: hidden;
         pointer-events: none;
         height: 100%;
         width: 100%;
-        transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: opacity @animation-time @animation-type;
     }
-    .Spin-wrapper{
+    &-wrapper{
         position: absolute;
         left: 0;
         top: 0;
@@ -18,52 +23,44 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: rgba(255,255,255,0.9);
+        background: @default-spin-bg;
         z-index: 200;
         align-items: center;
-        .Spin-wrapper-icon{
-            font-size: 32px;
+        .@{prefixCls}-wrapper-icon{
+            font-size: @default-spin-default-font-size;
             svg  {
                 display: inline-block;
-                animation: deer-ui-spin 1.5s linear infinite;
+                animation: deer-ui-spin @loading-time linear infinite;
             }
-            &.Spin-wrapper-icon-large{
-                font-size: 40px;
+            &.@{prefixCls}-wrapper-icon-large{
+                font-size: @default-spin-large-font-size;
             }
-            &.Spin-wrapper-icon-small{
-                font-size: 24px;
+            &.@{prefixCls}-wrapper-icon-small{
+                font-size: @default-spin-small-font-size;
             }
         }
-        .Spin-wrapper-tip{
-            font-size: 14px;
+        .@{prefixCls}-wrapper-tip{
+            font-size: @default-spin-tip-font-size;
             font-weight: bold;
             margin-left: 10px;
-            
         }
     }
 }
-.Spin-spinning{
-    .Spin-indicator{
-        font-size: 32px;
+.@{prefixCls}-spinning{
+    .@{prefixCls}-indicator{
+        font-size: @default-spin-indicator-font-size;
+        color: @default-spin-indicator-color;
         svg{
-            animation: deer-ui-spin 1.5s linear infinite;
+            animation: deer-ui-spin @loading-time linear infinite;
         }
-        &.Spin-indicator-small {
-            font-size: 20px;
+        &.@{prefixCls}-indicator-small {
+            font-size: @default-spin-small-font-size;
         }
-        &.Spin-indicator-large {
-            font-size: 40px;
+        &.@{prefixCls}-indicator-large {
+            font-size: @default-spin-large-font-size;
         }
-        &.Spin-indicator-default {
-            font-size: 32px;
+        &.@{prefixCls}-indicator-default {
+            font-size: @default-spin-default-font-size;
         }
     }
-}
-@keyframes deer-ui-spin{
-    0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
 }

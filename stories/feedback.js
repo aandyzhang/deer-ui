@@ -12,7 +12,6 @@ require("../components/button/style.less");
 require("../components/spin/style.less");
 require("../components/message/style.less");
 require("../components/codeview/style.less");
-require("../components/codeview/style.less");
 storiesOf("操作反馈", module)
   .add("Spin 加载中", () => (
     <div>

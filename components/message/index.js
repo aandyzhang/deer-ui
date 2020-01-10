@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import cls from 'classnames';
 import { InfoIcon, SuccessIcon, WarningIcon, ErrorIcon, LoadingIcon } from "../icon";
-// require("./style.less");
+
 class Message extends PureComponent {
   state = {
     visible: true
@@ -11,6 +11,7 @@ class Message extends PureComponent {
   animationTime = 500;
   _containerRef = null;
   _currentNodeRef = null;
+
   constructor(props) {
     super(props);
     this.typeConfig = {
@@ -22,6 +23,7 @@ class Message extends PureComponent {
     };
   }
   static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
     title: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -34,12 +36,14 @@ class Message extends PureComponent {
 
   static defaultProps = {
     duration: 2,
+    prefixCls: "deer-ui-message",
     darkTheme: false,
     onClose: () => {}
   };
 
   componentDidMount() {
     const { duration, onClose } = this.props;
+
     this.timer = setTimeout(() => {
       this.setState({ visible: false }, () => {
         setTimeout(() => {
@@ -53,6 +57,7 @@ class Message extends PureComponent {
   static renderElement = (type, title, onClose,duration,darkTheme) => {
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
+
     const _message = ReactDOM.render(
       <Message
         type={type}
@@ -108,12 +113,15 @@ class Message extends PureComponent {
   render() {
     const { visible } = this.state;
     const typeConfig = this.typeConfig;
-    const { title, type,className, darkTheme, ...attr} = this.props;
+
+    const { title, type,className, darkTheme,prefixCls, ...attr} = this.props;
+
     const messageCss = visible ? 'message-open' : 'message-close';
-    return <div className={cls('message', className, 
-      { [`message-${type}`]: type },
-      { ['message-theme-dark']: darkTheme},[`${messageCss}`])} {...attr}>
-        <span className="message-icon">
+
+    return <div className={cls(`${prefixCls}`, className, 
+      { [`${prefixCls}-${type}`]: type },
+      { [`${prefixCls}-theme-dark`]: darkTheme},[`${messageCss}`])} {...attr}>
+        <span className={`${prefixCls}-icon`}>
          {type === typeConfig['info'] ? <InfoIcon/> : null}
          {type === typeConfig['success'] ? <SuccessIcon/> : null}
          {type === typeConfig['warning'] ? <WarningIcon/> : null}

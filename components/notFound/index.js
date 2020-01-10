@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-// require("./style.less");
 class NotFound extends PureComponent {
   static propTypes = {
     firstWord: PropTypes.string,

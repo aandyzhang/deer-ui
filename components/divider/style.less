@@ -1,26 +1,30 @@
-.Divider-vertical{
-    margin: 0px 5px;
+
+@import '../styles/themes.less';
+
+@prefixCls: deer-ui-divider;
+
+.@{prefixCls}-vertical{
     height: 12px;
     display: inline-block;
-    border-right: 1px solid #888;
+    border-right: 1px solid @border-color;
     vertical-align: middle;
    &.dashed{
         border-right-style: dashed;
     }
 }
-.Divider-horizontal{
+.@{prefixCls}-horizontal{
     margin: 10px 0px;
     width: 100%;
-    border-bottom: 1px solid #888;
+    border-bottom: 1px solid @border-color;
     &.dashed{
         border-bottom-style: dashed;
     }
 }
 
-.Divider-orientation{
+.@{prefixCls}-orientation{
     width: 100%;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: @default-divider-orientation-padding;
+    font-size: @default-divider-font-size;
     white-space: nowrap;
     font-weight: 500;
     display: table;
@@ -28,38 +32,38 @@
         height: 1px;
         width: 50%;
         display: table-cell;
-        border-top: 1px solid #888;
+        border-top: 1px solid @border-color;
         position: relative;
         top: 50%;
         transform: translateY(50%);
       }
-    &.Divider-orientation-center{
+    &-center{
         text-align: center;
     }
-    &.Divider-orientation-left{
+    &-left{
         b {
             &:first-child {
-              width: 10%;
+              width: @default-divider-left-left-width;
             }
             &:last-child {
-              width: 90%;
+              width: @default-divider-left-right-width;
             }
           }
     }
-    &.Divider-orientation-right{
+    &-right{
         b {
             &:first-child {
-              width: 80%;
+              width: @default-divider-right-left-width;
             }
             &:last-child {
-              width: 90%;
+              width: @default-divider-right-right-width;
             }
           }
     }
-    .Divider-orientation-content{
+    &-content{
         text-align: center;
-        padding:0 20px;
-        font-size: 16px;
+        padding: @default-divider-padding;
+        font-size: @default-divider-font-size;
         white-space: nowrap;
         font-weight: bold;
     }

@@ -13,11 +13,13 @@ class Tabs extends PureComponent {
     activeKey: ~~(this.props.activeKey || this.props.defaultActiveKey)
   };
   static defaultProps = {
+    prefixCls: "deer-ui-tabs",
     defaultActiveKey: "1",
     onChange: () => {}
   };
 
   static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
     defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onChange: PropTypes.func
@@ -40,13 +42,6 @@ class Tabs extends PureComponent {
     });
   }
 
-  //   UNSAFE_componentWillReceiveProps({ activeKey }) {
-  //       console.log('change')
-  //     const _activeKey = ~~activeKey;
-  //     if (_activeKey !== this.props.activeKey) {
-  //       this.setState({ activeKey: _activeKey });
-  //     }
-  //   }
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeKey } = nextProps;
     const _activeKey = ~~activeKey;
@@ -72,7 +67,7 @@ class Tabs extends PureComponent {
   };
 
   render() {
-    const { children, arr } = this.props;
+    const { children, arr,prefixCls } = this.props;
     const { activeKey, lineWidth, lineOffsetLeft } = this.state;
     const childrenWithProps = React.Children.map(
       children,
@@ -85,7 +80,7 @@ class Tabs extends PureComponent {
             key={Mkey}
             role="tab"
             {...bindActiveRef}
-            className={`Mtabs-header-item ${
+            className={`${prefixCls}-header-item ${
               activeKey === Mkey ? "active" : ""
             } ${disabled ? "disabled" : ""}`}
             onClick={this.onTabChange(disabled)(Mkey)}
@@ -104,18 +99,18 @@ class Tabs extends PureComponent {
       });
     });
     return (
-      <div className="Mtabs" {...arr}>
-        <div className="Mtabs-header" ref={this.tabsHeader}>
+      <div className={`${prefixCls}`} {...arr}>
+        <div className={`${prefixCls}-header`} ref={this.tabsHeader}>
           {childrenWithProps}
           <div
-            className="Mtabs-line"
+            className={`${prefixCls}-line`}
             style={{
               width: lineWidth,
               transform: `translate3d(${lineOffsetLeft}px,0,0)`
             }}
           ></div>
         </div>
-        <div className="Mtabs-content">{content}</div>
+        <div className={`${prefixCls}-content`}>{content}</div>
       </div>
     );
   }

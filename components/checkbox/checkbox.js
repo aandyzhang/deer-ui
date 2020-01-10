@@ -4,6 +4,7 @@ import cls from "classnames";
 
 class Checkbox extends PureComponent {
   static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
     checked: PropTypes.bool,
     defaultChecked: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -12,6 +13,7 @@ class Checkbox extends PureComponent {
     size: PropTypes.oneOf(["small", "default", "large"])
   };
   static defaultProps = {
+    prefixCls: 'deer-ui-checkbox',
     checked: false,
     disabled: false,
     onChange: () => {},
@@ -21,17 +23,8 @@ class Checkbox extends PureComponent {
   };
   state = {
     checked: this.props.checked || this.props.defaultChecked,
-    prevChecked: false //解决getDerivedStateFromPropsbug
+    prevChecked: false 
   }
- // eslint-disable-next-line
-  // UNSAFE_componentWillReceiveProps({checked}) {
-  //   // console.log('UNSAFE_componentWillReceiveProps')
-  //   if (checked !== this.props.checked) {
-  //     this.setState({
-  //       checked
-  //     });
-  //   }
-  // }
  static getDerivedStateFromProps(nextProps, currentState) {
    const { checked } = nextProps;
     if(checked !== currentState.prevChecked){
@@ -52,17 +45,17 @@ class Checkbox extends PureComponent {
   }
 
   render() {
-    const { children, value,disabled,indeterminate } = this.props;
+    const { children, className,value,disabled,indeterminate,prefixCls,...arr} = this.props;
     const { checked } = this.state;
     return (
-      <div className="Checkbox">
-        <label className={cls("Checkbox-wrapper",{
-            "Checkbox-wrapper-disabled": disabled
-        })}>
+      <div className={`${prefixCls}`}>
+        <label className={cls(`${prefixCls}-wrapper`,{
+            [`${prefixCls}-wrapper-disabled`]: disabled
+        })} {...arr}>
           <span
-            className={cls("Checkbox-wrapper-content", {
-              "Checkbox-wrapper-content-checked": checked,
-              "Checkbox-wrapper-content-indeterminate": checked && indeterminate
+            className={cls(`${prefixCls}-wrapper-content`, className,{
+              [`${prefixCls}-wrapper-content-checked`]: checked,
+              [`${prefixCls}-wrapper-content-indeterminate`]: checked && indeterminate
             })}
           >
             <input
@@ -71,9 +64,9 @@ class Checkbox extends PureComponent {
               value={value}
               checked={checked}
               disabled={disabled}
-              className="Checkbox-checkbox"
+              className={`${prefixCls}-checkbox`}
             />
-            <span className="Checkbox-inner"></span>
+            <span className={`${prefixCls}-inner`}></span>
             <span>{children}</span>
           </span>
         </label>

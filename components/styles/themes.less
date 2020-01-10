@@ -18,15 +18,15 @@ deer-ui 默认主题配置
 @bg-color: #FAFAFA;
 @font-color: rgba(0, 0, 0, .65);
 @disabled-font-color: fade(@font-color, 30%);
+@common-bg-color: rgba(0, 0, 0, .5);
 
 //动画时间
 @loading-time: 1.5s;
 @loading-opacity: .7;
-@animate-time : .5s;
-@animate-type: cubic-bezier(0.165, 0.84, 0.44, 1);
-@animate-type-easy-in-out: cubic-bezier(.9, .25, .08, .83);
-@default-transition: @animate-time @animate-type;
-
+@animation-time : .5s;
+@animation-type: cubic-bezier(0.165, 0.84, 0.44, 1);
+@animation-type-easy-in-out: cubic-bezier(.9, .25, .08, .83);
+@default-transition: @animation-time @animation-type;
 
 
 //Collapse
@@ -54,3 +54,79 @@ deer-ui 默认主题配置
 @button-large-padding: 0 40px;
 @button-large-height: 50px;
 @button-disabled-opacity: .7;
+
+
+//Empty
+@default-empty-border-color: @default-color;
+@default-empty-background-color: #fff;
+@default-empty-color: rgba(0, 0, 0, 0.65);
+
+
+//Message
+@default-message-z-index: 1000;
+@default-message-font-size: 14px;
+@default-message-line-height: 22px;
+@default-message-border-radius: 6px;
+//message宽度
+@default-message-width: 200px;
+@default-message-height: 30px;
+//动画时间
+@default-message-show-time: .5s;
+@default-message-dark-bg: @common-bg-color;
+@default-message-dark-font-color: #fff;
+//message内容图标大小
+@default-message-icon-font-size: 16px;
+
+
+//Spin
+@default-spin-bg: rgba(255, 255, 255, .9);
+//加载图标大小
+@default-spin-indicator-font-size: 32px;
+//加载图标颜色
+@default-spin-indicator-color: @primary-color;
+//图标三种大小
+@default-spin-small-font-size: 20px;
+@default-spin-default-font-size: 28px;
+@default-spin-large-font-size: 34px;
+//tip字体
+@default-spin-tip-font-size: 14px;
+
+
+// Table
+
+@default-table-border-color: @border-color;
+@default-table-odd-color: @bg-color;
+@default-table-even-color: white;
+@default-table-hover-color: fade(@primary-color, 10%);
+
+// tabs
+@default-tabs-font-size: 14px;
+@default-tabs-active-color: @primary-color;
+@default-tabs-transition-type: @animation-type;
+@default-tabs-transition-time: @animation-time;
+@default-tabs-content-border-top-color: @border-color;
+@default-tabs-header-color: #000;
+@default-tabPane-color: #000;
+@default-tabPane-padding-top: 10px;
+
+
+//checkbox
+@default-checkbox-width: 16px;
+@default-checkbox-height: 16px;
+@default-checkbox-bg-color: #fff;
+@default-checkbox-margin-right: 10px;
+@default-checkbox-transition-type: cubic-bezier(.71, -0.46, .88, .6);
+@default-checkbox-transition-time: .1s;
+@default-checkbox-border-color: @primary-color;
+
+
+//divider
+@default-divider-padding: 0 20px;
+@default-divider-font-size: 16px;
+@default-divider-orientation-padding: 10px 20px;
+
+@default-divider-left-left-width: 10%;
+@default-divider-left-right-width: 90%;
+
+@default-divider-right-left-width: 90%;
+@default-divider-right-right-width: 10%;

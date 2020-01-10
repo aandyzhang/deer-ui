@@ -23,7 +23,7 @@
     "build:docs": "rimraf .docs && build-storybook -c .storybook -o .docs",
     "storybook": "start-storybook -p 8080 -c .storybook",
     "build:types": "rimraf types && tsc --outDir types -d --emitDeclarationOnly",
-    "build:css-web": "webpack --config scripts/webpack.css.config.js --progress",
+    "build:css-webpack": "webpack --config scripts/webpack.css.config.js --progress",
     "build:css": "cd scripts && gulp",
     "build:umd": "webpack --config scripts/webpack.prod.config.js --progress",
     "build:es": "babel components -d es --ignore **/__tests__",

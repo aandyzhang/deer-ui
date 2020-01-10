@@ -1,49 +1,46 @@
-.Mtabs {
-    font-size: 14px;
+
+@import '../styles/themes.less';
+
+@prefixCls: deer-ui-tabs;
+
+.@{prefixCls} {
+    font-size: @default-tabs-font-size;
     width: 100%;
-    .Mtabs-header {
+    &-header {
         display: flex;
         justify-content: space-around;
         cursor: pointer;
         position: relative;
         margin-bottom: -1px;
-        .Mtabs-header-item {
+        &-item {
             padding: 12px 30px;
+            color: @default-tabs-header-color;
             &.active {
-                color: #31c27c;
+                color: @default-tabs-active-color;
             }
             &.disabled {
-                color: #d9d9d9;
+                color: @disabled-font-color;
                 cursor: not-allowed;
             }
         }
-        .Mtabs-line {
+        .@{prefixCls}-line {
             position: absolute;
             bottom: 0;
             width: auto;
             left: 0;
-            border-bottom: 2px solid #31c27c;
-            transition: transform  .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-bottom: 2px solid @default-tabs-active-color;
+            transition: transform  @default-tabs-transition-time @default-tabs-transition-type;
         }
     }
-    .Mtabs-content {
+    &-content {
         display: flex;
-        border-top: 1px solid #e8e8e8;
+        border-top: 1px solid @default-tabs-content-border-top-color;
         width: 100%;
         padding: 12px 30px;
     }
 }
 
 .TabPane {
-    .TabPane-title {
-        padding: 12px 16px;
-        display: flex;
-        cursor: pointer;
-        flex-direction: column;
-        color: #45526b;
-        border-bottom: 2px solid #888;
-    }
-    .TabPane-content {
-        padding: 12px 16px;
-    }
+    color: @default-tabPane-color;
+    padding-top: @default-tabPane-padding-top;
 }

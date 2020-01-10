@@ -1,5 +1,4 @@
 import React from "react";
-// require("./style.less");
 
 class TabPane extends React.Component {
   //   constructor(props) {

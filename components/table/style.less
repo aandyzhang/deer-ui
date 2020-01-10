@@ -1,75 +1,77 @@
-.deer-ui-table{
+@import '../styles/themes.less';
+
+@prefixCls: deer-ui-table;
+
+.@{prefixCls}{
     width:100%;
     font-size: 14px;
     overflow: auto;
-    .deer-ui-table-header{
+    &-header{
         height: 55px;
-        border-bottom: 1px solid #e8e8e8;
+        border-bottom: 1px solid @default-table-border-color;
         display: flex;
         font-weight: bold;
-        .deer-ui-table-header-td{
+        &-td{
             width: 100%;
             padding: 16px;
             text-align: left;       
         }
-        .deer-ui-table-header-td-bordered{
-            border-left: 1px solid #e8e8e8;
-            border-top: 1px solid #e8e8e8;
+        &-bordered{
+            border-left: 1px solid @default-table-border-color;
+            border-top: 1px solid @default-table-border-color;
             &:last-child{
-                border-right: 1px solid #e8e8e8;
+                border-right: 1px solid @default-table-border-color;
             }
         }
+        &.@{prefixCls}-header-hideHeader {
+            display: none;
+        }
+        &.@{prefixCls}-header-noBottomLine {
+            border-bottom: none;
+        }
     }
-    .deer-ui-table-header-noBottomLine{
-        border-bottom: none;
-    }
-    .deer-ui-table-header-hideHeader{
-        display: none;
-    }
-    .deer-ui-table-content{
-        .deer-ui-table-content-tr{
+
+    .@{prefixCls}-content{
+        &-tr{
             display: flex;
             align-items: center;
             justify-content: center;
-            .deer-ui-table-content-td{
-                width: 100%;
-                padding: 16px;
-                text-align: left;  
-            }   
-
+            transition: all @default-transition;
             &:nth-child(odd){
-                background: white;
+                background: @default-table-odd-color;
             }
             &:nth-child(even){
-                background: #eee;
+                background: @default-table-even-color;
             } 
         }
-        .deer-ui-table-content-tr-hover:hover{
-            background: #eef7f1;
+        &-td{
+            width: 100%;
+            padding: 16px;
+            text-align: left;  
+        }   
+        &-tr-hover:hover{
+            background: @default-table-hover-color;
         }
-        .deer-ui-table-content-tr-bordered {
-            border-left: 1px solid #e8e8e8;
-            border-right: 1px solid #e8e8e8;
-            // border-bottom: 1px solid #e8e8e8;
+        &-tr-bordered {
+            border-left: 1px solid @default-table-border-color;
+            border-right: 1px solid @default-table-border-color;
             .deer-ui-table-content-td-bordered{
-                // border-right: 1px solid #e8e8e8;
-                // border-bottom: 1px solid #e8e8e8;
                 &:last-child{
                     border-right: none;
                 }
             }
         }
-        .deer-ui-table-empty{
+        .@{prefixCls}-empty{
             display: flex;
             background: #fff;
             min-height: 300px;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            .deer-ui-table-empty-icon{
+            &-icon{
                 align-items: center;
             }
-            .deer-ui-table-empty-content{
+            &-content{
                 padding: 20px
             }
         }

@@ -1,20 +1,23 @@
-.Empty {
+@import '../styles/themes.less';
+
+@prefixCls : deer-ui-empty;
+
+.@{prefixCls} {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #dcdcdc;
-    border-radius: 4px;
-  //   color: rgba(0, 0, 0, 0.65);
-      background: #fff;
-    .Empty-icon {
+    border: 1px solid @default-empty-border-color;
+    border-radius: @border-radius;
+    background-color: @default-empty-background-color;
+    &-icon {
       margin-bottom: 12px;
       font-size: 50px;
       height: 55px;
     }
-    .Empty-des {
+    &-des {
       font-size: 14px;
-      color: rgba(0, 0, 0, 0.65);
+      color: @default-empty-color;
       margin-bottom: 12px;
     }
     svg{

@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import Checkbox from "./checkbox";
 class CheckboxGroup extends PureComponent {
   state = {
-    value:
-    // this.props.value ||
-    this.props.defaultValue 
-    // this.getCheckedValue()
+    value: []
   };
   static propTypes = {
     defaultValue: PropTypes.array,
@@ -38,13 +35,13 @@ class CheckboxGroup extends PureComponent {
     this.props.onChange(value);
   };
   render() {
-    const { options, disabled ,value:currentValue } = this.props;
-    const { value } = this.state
+    const {options, disabled ,value:currentValue,defaultValue } = this.props;
     return (
       <div className="checkboxGroup">
-        {options.length > 0 &&
-          options.map((item, index) => {
-              const isChecked = value.find(v => v === item);
+        {/* value去匹配选中项目 */}
+        {currentValue.length > 0 &&
+          currentValue.map((item, index) => {
+              const isChecked = defaultValue.find(v => v === item);
             return (
               <Checkbox
                 value={currentValue[index]}
@@ -53,7 +50,7 @@ class CheckboxGroup extends PureComponent {
                 key={index}
                 defaultChecked={!!isChecked}
               >
-                {item}
+                {options[index]}
               </Checkbox>
             );
           })}

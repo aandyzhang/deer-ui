@@ -15,7 +15,9 @@ function loadStories() {
   //数据展示
   require('../stories/showData');
   //操作反馈
-  require('../stories/feedback')
+  require('../stories/feedback');
+  //交互组件
+  require('../stories/interaction');
 }
 
 configureActions({

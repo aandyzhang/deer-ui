@@ -1,10 +1,9 @@
 import React, { PureComponent } from "react";
-import classNames from "classnames";
+import cls from "classnames";
 import PropTypes from "prop-types";
 import Spin from "../spin";
 import Empty from "../empty";
 import Checkbox from "../checkbox";
-// require("./style.less");
 
 class Table extends PureComponent {
   state = {
@@ -13,6 +12,7 @@ class Table extends PureComponent {
     isSelectAll: false, //是否全选
   };
   static defaultProps = {
+    prefixCls: 'deer-ui-table',
     dataSource: [],
     columns: [],
     loading: false,
@@ -24,6 +24,7 @@ class Table extends PureComponent {
     rowKey: 'key'
   };
   static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
     dataSource: PropTypes.array,
     columns: PropTypes.array,
     loading: PropTypes.bool,
@@ -71,12 +72,7 @@ class Table extends PureComponent {
 
   get dataSource() {
     const { dataSource } = this.props;
-    // const { pageIndex } = this.state;
     return dataSource;
-    // return dataSource.slice(
-    //   (pageIndex - 1) * pagination.pageSize,
-    //   pageIndex * pagination.pageSize
-    // );
   }
 
   //全选
@@ -107,7 +103,7 @@ class Table extends PureComponent {
   };
   render() {
     const {
-      // dataSource,
+      prefixCls,
       columns,
       loading,
       loadingTip,
@@ -120,18 +116,18 @@ class Table extends PureComponent {
     const { isSelectAll, selectedRows } = this.state;
     this.rows = {};
     return (
-      <div className="deer-ui-table">
+      <div className={`${prefixCls}`}>
         <Spin spinning={loading} tip={loadingTip}>
           <div
-            className={classNames("deer-ui-table-header", {
-              "deer-ui-table-header-hideHeader": !showHeader,
-              "deer-ui-table-header-noBottomLine": this.dataSource.length === 0
+            className={cls(`${prefixCls}-header`, {
+              [`${prefixCls}-header-hideHeader`]: !showHeader,
+              [`${prefixCls}-header-noBottomLine`]: this.dataSource.length === 0
             })}
           >
             {rowSelection && (
               <div
-                className={classNames("deer-ui-table-header-td", {
-                  "deer-ui-table-header-td-bordered": bordered
+                className={cls(`${prefixCls}-header-td`, {
+                  [`${prefixCls}-header-td-bordered`]: bordered
                 })}
               >
                 <Checkbox
@@ -143,8 +139,8 @@ class Table extends PureComponent {
             {columns.map((item, index) => {
               return (
                 <div
-                  className={classNames("deer-ui-table-header-td", {
-                    "deer-ui-table-header-td-bordered": bordered
+                  className={cls(`${prefixCls}-header-td`, {
+                    [`${prefixCls}-header-td-bordered`]: bordered
                   })}
                   key={index}
                 >
@@ -153,7 +149,7 @@ class Table extends PureComponent {
               );
             })}
           </div>
-          <div className="deer-ui-table-content">
+          <div className={`${prefixCls}-content`}>
             {this.dataSource.length > 0 ? (
               this.dataSource.map((item, index) => {
                 const checkboxProps =
@@ -169,16 +165,16 @@ class Table extends PureComponent {
                   });
                 return (
                   <div
-                    className={classNames("deer-ui-table-content-tr", {
-                      "deer-ui-table-content-tr-bordered": bordered,
-                      "deer-ui-table-content-tr-hover": hover
+                    className={cls(`${prefixCls}-content-tr`, {
+                      [`${prefixCls}-content-tr-bordered`]: bordered,
+                      [`${prefixCls}-content-tr-hover`]: hover
                     })}
                     key={item[rowKey]}
                   >
                     {rowSelection && (
                       <div
-                        className={classNames("deer-ui-table-content-td", {
-                          "deer-ui-table-content-td-bordered": bordered
+                        className={cls(`${prefixCls}-content-td`, {
+                          [`${prefixCls}-content-td-bordered`]: bordered
                         })}
                       >
                         <Checkbox
@@ -192,8 +188,8 @@ class Table extends PureComponent {
                       const { dataIndex, render } = value;
                       return (
                         <div
-                          className={classNames("deer-ui-table-content-td", {
-                            "deer-ui-table-content-td-bordered": bordered
+                          className={cls(`${prefixCls}-content-td`, {
+                            [`${prefixCls}-content-td-bordered`]: bordered
                           })}
                           key={value.key}
                         >

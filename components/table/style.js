@@ -1,2 +1,5 @@
 import "../styles";
-import './style.less'
+import '../checkbox/style';
+import '../spin/style';
+import '../empty/style';
+import './style.less';

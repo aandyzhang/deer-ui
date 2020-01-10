@@ -58,7 +58,7 @@ storiesOf("基础", module)
         禁用
       </Button>
       <br/>
-      <Button type="info" dashed onClick={action("clicked")}>
+      <Button type="info" dashed={true} onClick={action("clicked")}>
         虚线
       </Button>
 
@@ -139,7 +139,7 @@ storiesOf("基础", module)
         禁用
       </Button>
       <br/>
-      <Button type="info" hollow dashed onClick={action("clicked")}>
+      <Button type="info" hollow dashed={true} onClick={action("clicked")}>
         虚线
       </Button>
       <Button type="primary" hollow loading={true} onClick={action("clicked")}>
@@ -278,11 +278,11 @@ storiesOf("基础", module)
         <LoadingIcon />
       </Button>
 
-      <Button type="warning" dashed circle>
+      <Button type="warning" dashed={true} circle>
         <EmptyIcon />
       </Button>
 
-      <Button type="primary" hollow dashed circle>
+      <Button type="primary" hollow dashed={true} circle>
         <PasswordShowIcon />
       </Button>
 
