@@ -11,3 +11,4 @@ export { default as Checkbox } from './checkbox';
 export { default as Divider } from './divider';
 export { default as Message } from './message';
 export { default as NotFound } from './notFound';
+export { default as Input } from './input';

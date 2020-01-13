@@ -1,0 +1,91 @@
+
+@import '../styles/themes.less';
+@import '../styles/mixins.less';
+
+@prefixCls: deer-ui-input;
+
+.@{prefixCls}{
+    font-variant: tabular-nums;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    padding: @default-input-padding;
+    width: 100%;
+    height: @default-input-height;
+    font-size: @font-size;
+    line-height: 1.5;
+    color: @font-color;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    transition: all @animation-time;
+    outline: none;
+    &:active,
+    &:hover,
+    &:focus {
+      border-color: @primary-color;
+      outline: none;
+      box-shadow: @default-input-box-shadow;
+    }
+  &-disabled{
+    cursor: not-allowed;
+    color: @disabled-font-color;
+    background-color: @disabled-bg-color;
+    &:active,
+    &:hover,
+    &:focus {
+      border-color: @border-color;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  &-small {
+    height: @default-input-height-small;
+  }
+  &-large {
+    height: @default-input-height-large;
+  }
+  &-wrapper {
+      position: relative;
+      &.@{prefixCls}-has-prefix{
+        .@{prefixCls} {
+            padding-left: @default-input-prefix-offset + 20px;
+        }
+      }
+      &.@{prefixCls}-has-suffix{
+        .@{prefixCls} {
+            padding-right: @default-input-prefix-offset + 20px;
+        }
+      }
+  }
+  &-prefix,
+  &-suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    .text-center();
+    cursor: pointer;
+    &, svg {
+      color: @disabled-font-color;
+      font-size: @font-size;
+    }
+  }
+  &-prefix {
+    left: @default-input-prefix-offset;
+  }
+  &-suffix {
+    right: @default-input-prefix-offset;
+  }
+  
+  &-password {
+    &-suffix {
+      svg {
+        color: @font-color;
+      }
+    }
+  }
+}
