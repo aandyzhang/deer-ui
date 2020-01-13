@@ -173,14 +173,14 @@ module.exports = {
 注意,定制主题后，less-loader 的处理范围不能过滤掉 node_modules 下的 deer-ui 包。
 ```
 
-##  CHANGELOG
+##  更新日志
 
 [CHANGELOG](https://github.com/zhangboyang123/deer-ui/blob/master/CHANGELOG.md)
 
 
 ## ui设计思路
 
-参考 Ant-Design组件，实现AntDesign大部分组件，你有的我也要有，而且我全都要。哈哈
+参考 Ant-Design组件库交互和视觉设计，实现AntDesign大部分组件。最终目的是：你有的我也有，而且我全都要😝
 
 ## 谁在使用
 
@@ -189,17 +189,10 @@ module.exports = {
 - [自己开源cms后台系统](https://www.webfamily.cn)
 
 ## 后续开发计划
-1. 第一阶段组件已经开发完毕，基本完成message,button,table,checkbox,collapse,tabs,empty.loading,icon,divider等基础组件的开发，完成组件库框架搭建，基本实现自动化打包部署，stylelint,eslint,commitlint,自动生成changelog，组件库测试环境搭建，组件库官方文档网站搭建，主题定制等功能
+1. 第一阶段组件已经开发完毕，基本完成message,input,radio,button,table,checkbox,collapse,tabs,empty.loading,icon,divider等基础组件的开发;完成Deer-ui组件库框架搭建，实现自动化打包部署，增加stylelint,eslint,commitlint,自动生成changelog，组件库测试环境搭建，组件库官方文档网站搭建，以及主题定制等功能。
 2. 后续增加组件库的自动化测试，国际化功能。
 3. 继续完成后面组件的开发。
 4. 最后畅想下，使用ts完成组件库的重构。
-
-
-## 参考轮子
-
-- [ant-design](https://github.com/ant-design/ant-design)
-- [cuke-ui](https://github.com/cuke-ui/cuke-ui)
-- [zarm-web](https://github.com/JeromeLin/zarm-web)
 
 ## 开发组件
 
@@ -265,6 +258,11 @@ npm run pub:minor  //都会完成上述不同，唯一区别是，打的npm版�
 
 版本号区别查看文章[npm如何管理依赖包的版本](https://www.jianshu.com/p/1470c5d7b8c3)
 
+## 参考轮子
+
+- [ant-design](https://github.com/ant-design/ant-design)
+- [cuke-ui](https://github.com/cuke-ui/cuke-ui)
+- [zarm-web](https://github.com/JeromeLin/zarm-web)
 
 
 ##  License

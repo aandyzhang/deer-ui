@@ -4,7 +4,9 @@ const { name, repository } = require("../package.json");
 import { FaGithub } from "react-icons/fa";
 import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
-import startMd from './markdown/start.md'
+import startMd from './markdown/start.md';
+import themeMd from './markdown/theme.md';
+import changeLogMd from '../CHANGELOG.md';
 require('./style/index.less');
 storiesOf("综述", module)
   .add("介绍", () => (
@@ -16,7 +18,7 @@ storiesOf("综述", module)
           <FaGithub style={{ fontSize: 30, color: "#444" }} />
         </a>
       </h1>
-      <p style={{fontSize:'100px',margin:'0px'}}>
+      <p style={{fontSize:'100px'}}>
         🦌
       </p>
       <p>
@@ -45,6 +47,11 @@ storiesOf("综述", module)
           />
         </a>
       </p>
+      <h2>源码地址</h2>
+      <p>
+        <a href="https://github.com/zhangboyang123/deer-ui/" title="Deer-ui">Deer-ui</a>
+      </p>
+
       <h2>问题</h2>
       <p>
         如果你在使用deer-ui时遇到了问题,
@@ -53,8 +60,8 @@ storiesOf("综述", module)
         <a href="https://github.com/zhangboyang123/deer-ui/pulls">Pull Request</a>
       </p>
 
-      <h2>设计和组件交互</h2>
-      <p>高仿 Ant-Design </p>
+      <h2>组件库设计思路</h2>
+      <p>参考 Ant-Design组件库交互和视觉设计，实现AntDesign大部分组件。最终目的是：你有的我也有，而且我全都要😝</p>
       <h2>谁在使用</h2>
       <ul>
         <li> - 我自己 </li>
@@ -82,8 +89,8 @@ storiesOf("综述", module)
       </ul>
     </article>
   ))
-  .add("使用说明", () => (
-    <div className="change-log">
+  .add("快速上手", () => (
+    <div>
       <ReactMarkDown
         source={startMd}
         renderers={{
@@ -91,4 +98,24 @@ storiesOf("综述", module)
         }}
       />
     </div>
-  ));
+  ))
+  .add('主题定制',()=> (
+    <div>
+       <ReactMarkDown
+        source={themeMd}
+        renderers={{
+          code: CodeBlock
+        }}
+      />
+    </div>
+  ))
+  .add('更新日志',()=> (
+    <div>
+       <ReactMarkDown
+        source={changeLogMd}
+        renderers={{
+          code: CodeBlock
+        }}
+      />
+    </div>
+  ))
