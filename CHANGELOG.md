@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/zhangboyang123/deer-ui/compare/v1.1.2...v1.1.3) (2020-01-14)
+
+
+### Features
+
+* **input:** 开发input组件以及文档 ([1a575e6](https://github.com/zhangboyang123/deer-ui/commit/1a575e62416249049e6134115276bc6c65aebc2f))
+* **radio:** 开发radio单选框组件以及开发文档 ([b8598fa](https://github.com/zhangboyang123/deer-ui/commit/b8598fa91c12fc8a75eb0d3d805113a719cb67fa))
+
 ### [1.1.2](https://github.com/zhangboyang123/deer-ui/compare/v1.1.1...v1.1.2) (2020-01-10)
 
 
