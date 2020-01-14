@@ -1,9 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { CodeView, Checkbox } from "../components";
+import { CodeView, Checkbox,Radio } from "../components";
 const CheckboxGroup = Checkbox.CheckboxGroup;
 
 require('../components/checkbox/style.less');
+require("../components/radio/style.less");
 
 const plainOptions = ["Php", "Java", "Js"];
 
@@ -108,3 +109,77 @@ storiesOf("交互组件", module)
       ></CodeView>
     </div>
   ))
+  .add("Radio单选框", () => (
+    <div>
+      <h2>基本使用</h2>
+      <Radio>Deer-ui</Radio>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>禁止</h2>
+      <Radio disabled>Deer-ui</Radio>
+      <div style={{ marginTop: "10px" }}>
+        <Radio disabled checked>
+          Deer-ui
+        </Radio>
+      </div>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio disabled>Deer-ui</Radio>
+        <Radio disabled checked>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>选中回调</h2>
+      <Radio
+        value="deer"
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+      >
+        Deer-ui
+      </Radio>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio value="deer" onChange={(e)=>{console.log(e.target.value)}}>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>组合使用</h2>
+      <Radio.Group
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+        value="B"
+      >
+        <Radio value="A">A</Radio>
+        <Radio value="B">B</Radio>
+        <Radio value="C" disabled>C</Radio>
+        <Radio value="D">D</Radio>
+      </Radio.Group>
+
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio.Group
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+        value="B"
+      >
+        <Radio value="A">A</Radio>
+        <Radio value="B">B</Radio>
+        <Radio value="C" disabled>C</Radio>
+        <Radio value="D">D</Radio>
+      </Radio.Group>
+      `}
+      ></CodeView>
+    </div>
+  ));

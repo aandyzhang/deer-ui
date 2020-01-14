@@ -24,13 +24,11 @@ import {
 import Button from "../components/button";
 import Icon from "../components/icons";
 import Input from "../components/input";
-import Radio from "../components/radio";
 import CodeView from "../components/codeview";
 require("./style/button.less");
 require("../components/button/style.less");
 require("../components/icons/style.less");
 require("../components/input/style.less");
-require("../components/radio/style.less");
 require("../components/codeview/style.less");
 Icon.createFromIconfontCN({
   scriptUrl: "https://at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
@@ -40,7 +38,6 @@ storiesOf("基础", module)
   .add("Button 按钮", () => (
     <div className="deer-button">
       <h2>基本使用</h2>
-      <Button onClick={action("clicked")}>默认</Button>
 
       <Button type="primary" onClick={action("clicked")}>
         主色调
@@ -62,7 +59,6 @@ storiesOf("基础", module)
       <Button disabled onClick={action("clicked")}>
         禁用
       </Button>
-      <br />
       <Button type="info" dashed={true} onClick={action("clicked")}>
         虚线
       </Button>
@@ -118,9 +114,6 @@ storiesOf("基础", module)
         ></CodeView>
       </div>
       <h2>空心按钮</h2>
-
-      <Button onClick={action("clicked")}>默认</Button>
-
       <Button type="primary" hollow onClick={action("clicked")}>
         主色调
       </Button>
@@ -143,7 +136,6 @@ storiesOf("基础", module)
       <Button type="error" hollow disabled onClick={action("clicked")}>
         禁用
       </Button>
-      <br />
       <Button type="info" hollow dashed={true} onClick={action("clicked")}>
         虚线
       </Button>
@@ -629,77 +621,3 @@ storiesOf("基础", module)
       ></CodeView>
     </div>
   ))
-  .add("Radio单选框", () => (
-    <div>
-      <h2>基本使用</h2>
-      <Radio>Deer-ui</Radio>
-      <div style={{ marginBottom: "20px" }}></div>
-      <CodeView
-        value={`
-        import { Radio } from 'deer-ui'
-        <Radio>Deer-ui</Radio>
-      `}
-      ></CodeView>
-      <h2>禁止</h2>
-      <Radio disabled>Deer-ui</Radio>
-      <div style={{ marginTop: "10px" }}>
-        <Radio disabled checked>
-          Deer-ui
-        </Radio>
-      </div>
-      <div style={{ marginBottom: "20px" }}></div>
-      <CodeView
-        value={`
-        import { Radio } from 'deer-ui'
-        <Radio disabled>Deer-ui</Radio>
-        <Radio disabled checked>Deer-ui</Radio>
-      `}
-      ></CodeView>
-      <h2>选中回调</h2>
-      <Radio
-        value="deer"
-        onChange={e => {
-          console.log(e.target.value);
-        }}
-      >
-        Deer-ui
-      </Radio>
-      <div style={{ marginBottom: "20px" }}></div>
-      <CodeView
-        value={`
-        import { Radio } from 'deer-ui'
-        <Radio value="deer" onChange={(e)=>{console.log(e.target.value)}}>Deer-ui</Radio>
-      `}
-      ></CodeView>
-      <h2>组合使用</h2>
-      <Radio.Group
-        onChange={e => {
-          console.log(e.target.value);
-        }}
-        value="B"
-      >
-        <Radio value="A">A</Radio>
-        <Radio value="B">B</Radio>
-        <Radio value="C" disabled>C</Radio>
-        <Radio value="D">D</Radio>
-      </Radio.Group>
-
-      <div style={{ marginBottom: "20px" }}></div>
-      <CodeView
-        value={`
-        import { Radio } from 'deer-ui'
-        <Radio.Group
-        onChange={e => {
-          console.log(e.target.value);
-        }}
-        value="B"
-      >
-        <Radio value="A">A</Radio>
-        <Radio value="B">B</Radio>
-        <Radio value="C" disabled>C</Radio>
-        <Radio value="D">D</Radio>
-      </Radio.Group>
-      `}
-      ></CodeView>
-    </div>
-  ));
