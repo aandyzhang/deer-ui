@@ -24,11 +24,13 @@ import {
 import Button from "../components/button";
 import Icon from "../components/icons";
 import Input from "../components/input";
+import Radio from "../components/radio";
 import CodeView from "../components/codeview";
 require("./style/button.less");
 require("../components/button/style.less");
 require("../components/icons/style.less");
 require("../components/input/style.less");
+require("../components/radio/style.less");
 require("../components/codeview/style.less");
 Icon.createFromIconfontCN({
   scriptUrl: "https://at.alicdn.com/t/font_1484223_mrxdvedqa7g.js"
@@ -518,25 +520,25 @@ storiesOf("基础", module)
   .add("Input输入框", () => (
     <div>
       <h2>基本使用</h2>
-      <div style={{ marginBottom: "30px" }}>
-        <Input placeholder="请输入内容" type="text"/>
+      <div style={{ marginBottom: "20px" }}>
+        <Input placeholder="请输入内容" type="text" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="请输入密码" type="password" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="请输入数字" type="number" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="禁用" disabled />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="请输入" defaultValue="我是默认值" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="只读" value="只读" readOnly />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input
           placeholder="输入回调"
           onChange={e => console.log(e.target.value)}
@@ -555,13 +557,13 @@ storiesOf("基础", module)
       `}
       ></CodeView>
       <h2>基本使用</h2>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="小" size="small" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="默认" />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="大" size="large" />
       </div>
       <CodeView
@@ -573,10 +575,10 @@ storiesOf("基础", module)
       `}
       ></CodeView>
       <h2>可清空</h2>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="可清空" allowClear />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input
           placeholder="清空回调"
           allowClear
@@ -593,13 +595,13 @@ storiesOf("基础", module)
       `}
       ></CodeView>
       <h2>前置/后置标签</h2>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="前置" prefix={<UserIcon />} />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input placeholder="后置" suffix={<IoIosAddCircleOutline />} />
       </div>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input
           placeholder="前后都有"
           prefix={<CalendarIcon />}
@@ -615,7 +617,7 @@ storiesOf("基础", module)
       `}
       ></CodeView>
       <h2>密码框</h2>
-      <div style={{ marginBottom: "30px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <Input.Password placeholder="请输入密码" />
       </div>
       <CodeView
@@ -623,6 +625,80 @@ storiesOf("基础", module)
         import { Input } from 'deer-ui'
         const Password = Input.Password
         <Password placeholder="请输入密码" />
+      `}
+      ></CodeView>
+    </div>
+  ))
+  .add("Radio单选框", () => (
+    <div>
+      <h2>基本使用</h2>
+      <Radio>Deer-ui</Radio>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>禁止</h2>
+      <Radio disabled>Deer-ui</Radio>
+      <div style={{ marginTop: "10px" }}>
+        <Radio disabled checked>
+          Deer-ui
+        </Radio>
+      </div>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio disabled>Deer-ui</Radio>
+        <Radio disabled checked>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>选中回调</h2>
+      <Radio
+        value="deer"
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+      >
+        Deer-ui
+      </Radio>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio value="deer" onChange={(e)=>{console.log(e.target.value)}}>Deer-ui</Radio>
+      `}
+      ></CodeView>
+      <h2>组合使用</h2>
+      <Radio.Group
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+        value="B"
+      >
+        <Radio value="A">A</Radio>
+        <Radio value="B">B</Radio>
+        <Radio value="C" disabled>C</Radio>
+        <Radio value="D">D</Radio>
+      </Radio.Group>
+
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+        import { Radio } from 'deer-ui'
+        <Radio.Group
+        onChange={e => {
+          console.log(e.target.value);
+        }}
+        value="B"
+      >
+        <Radio value="A">A</Radio>
+        <Radio value="B">B</Radio>
+        <Radio value="C" disabled>C</Radio>
+        <Radio value="D">D</Radio>
+      </Radio.Group>
       `}
       ></CodeView>
     </div>

@@ -180,7 +180,7 @@ module.exports = {
 
 ## ui设计思路
 
-参考 Ant-Design组件库交互和视觉设计，实现AntDesign大部分组件。最终目的是：你有的我也有，而且我全都要😝
+参考 Ant-Design组件库交互和视觉设计，实现AntDesign大部分组件。最终目的是：我全都要😝
 
 ## 谁在使用
 
