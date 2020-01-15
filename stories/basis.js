@@ -40,21 +40,21 @@ storiesOf("基础", module)
       <h2>基本使用</h2>
 
       <Button type="primary" onClick={action("clicked")}>
-        主色调
+        Primary
       </Button>
 
       <Button type="info" onClick={action("clicked")}>
-        信息
+        Info
       </Button>
       <Button type="warning" onClick={action("clicked")}>
-        警告
+        Warning
       </Button>
 
       <Button type="error" onClick={action("clicked")}>
-        错误
+        Error
       </Button>
       <Button type="success" onClick={action("clicked")}>
-        成功
+        Success
       </Button>
       <Button disabled onClick={action("clicked")}>
         禁用
@@ -120,21 +120,6 @@ storiesOf("基础", module)
 
       <Button type="info" hollow onClick={action("clicked")}>
         信息
-      </Button>
-
-      <Button type="warning" hollow onClick={action("clicked")}>
-        警告
-      </Button>
-
-      <Button type="error" hollow onClick={action("clicked")}>
-        错误
-      </Button>
-
-      <Button type="success" hollow onClick={action("clicked")}>
-        成功
-      </Button>
-      <Button type="error" hollow disabled onClick={action("clicked")}>
-        禁用
       </Button>
       <Button type="info" hollow dashed={true} onClick={action("clicked")}>
         虚线
@@ -294,16 +279,6 @@ storiesOf("基础", module)
 
       <Button type="info" hollow circle disabled>
         <InfoIcon />
-      </Button>
-
-      <Button type="primary" circle size="small">
-        小
-      </Button>
-      <Button type="primary" circle>
-        中
-      </Button>
-      <Button type="primary" circle size="large">
-        大
       </Button>
       <div style={{ margin: "20px 0px" }}>
         <CodeView

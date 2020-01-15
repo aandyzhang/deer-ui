@@ -87,7 +87,7 @@ storiesOf("操作反馈", module)
       <h4>基本使用</h4>
       <div style={{ marginBottom: "30px" }} className="feedback-message">
         <Button type="success" onClick={()=> Message.success('成功弹框')}>成功</Button>
-        <Button type="error" onClick={()=> Message.error('错误弹错误弹框错误弹框错误弹框错误弹框错误弹框错误弹框错误弹框框')}>失败</Button>
+        <Button type="error" onClick={()=> Message.error('我是错误弹框')}>失败</Button>
         <Button type="warning" onClick={()=> Message.warning('警告弹框')}>警告</Button>
         <Button type="info" onClick={()=> Message.info('信息弹框')}>信息</Button>
         <Button type="primary" onClick={()=> Message.primary('基础弹框')}>加载</Button>
@@ -100,12 +100,12 @@ storiesOf("操作反馈", module)
       ></CodeView>
       <h4>自定义延时</h4>
       <div style={{ marginBottom: "30px" }}>
-        <Button type="primary" onClick={()=> Message.primary('4秒后关闭',()=>{},4)}>4秒后关闭</Button>
+        <Button type="primary" onClick={()=> Message.primary('6秒后关闭',()=>{},6)}>6秒后关闭</Button>
       </div>
       <CodeView
         value={`
         import { Message,Button } from 'deer-ui'
-        <Button type="primary" onClick={()=> Message.primary('4秒后关闭',()=>{},4)}>4秒后关闭</Button>
+        <Button type="primary" onClick={()=> Message.primary('6秒后关闭',()=>{},6)}>6秒后关闭</Button>
       `}
       ></CodeView>
       <h4>回调函数</h4>
@@ -120,7 +120,7 @@ storiesOf("操作反馈", module)
       ></CodeView>
      <h4>白天黑夜模式</h4>
       <div style={{ marginBottom: "30px" }} className="feedback-message">
-        <Button type="success" onClick={()=> Message.success('处理中...',()=>{console.log('处理成功')},1,false)}>默认白天</Button>
+        <Button type="primary" onClick={()=> Message.success('处理中...',()=>{console.log('处理成功')},1,false)}>默认白天</Button>
         <Button type="error" onClick={()=> Message.success('处理中...',()=>{console.log('处理成功')},1,true)}>黑夜</Button>
       </div>
       <CodeView
