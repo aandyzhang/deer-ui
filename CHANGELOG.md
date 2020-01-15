@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/zhangboyang123/deer-ui/compare/v1.1.3...v1.1.4) (2020-01-15)
+
+
+### Bug Fixes
+
+* **message,radio:** 修改message样式，调整radio生命周期问题 ([fb8530c](https://github.com/zhangboyang123/deer-ui/commit/fb8530c5ee0ce474d483655881287e6dd2473032))
+
 ### [1.1.3](https://github.com/zhangboyang123/deer-ui/compare/v1.1.2...v1.1.3) (2020-01-14)
 
 
