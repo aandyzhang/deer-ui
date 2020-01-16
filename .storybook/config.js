@@ -29,6 +29,7 @@ configureActions({
 addParameters({
   options: {
     name: `${name} v${version}`,
+    title: "Deer-ui",
     url: repository,
     showSearchBox: false,
     showPanel: false,

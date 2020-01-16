@@ -12,15 +12,12 @@ storiesOf("综述", module)
   .add("介绍", () => (
     <article style={{ padding: 20 }}>
       <h1 style={{ fontSize: 40, padding: 0, margin: 0 }}>
-        {name}
+        <span style={{fontSize: "40px",marginRight: "20px"}}>🦌</span>{name}
 
         <a href={repository} target="_blank" style={{ marginLeft: 20 }}>
           <FaGithub style={{ fontSize: 30, color: "#444" }} />
         </a>
       </h1>
-      <p style={{fontSize:'100px'}}>
-        🦌
-      </p>
       <p>
         <a href="https://www.npmjs.com/package/deer-ui" title="npm">
           <img
@@ -37,7 +34,7 @@ storiesOf("综述", module)
           <img src="https://img.shields.io/github/stars/zhangboyang123/deer-ui.svg?style=for-the-badge" />
         </a>
       </p>
-      <h3>🦌 deer-ui 一个简单高效轻量级的React组件库</h3>
+      <h3>deer-ui 一个简单高效轻量级的React组件库</h3>
       <h2>当前版本</h2>
       <p>
         <a href="https://badge.fury.io/js/deer-ui" title="npm">

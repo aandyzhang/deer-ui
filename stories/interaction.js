@@ -58,7 +58,7 @@ storiesOf("交互组件", module)
       ></CodeView>
       <h4>分组多选</h4>
       <div style={{ marginBottom: "30px" }}>
-        <CheckboxGroup options={plainOptions} value={["1","2", "3"]}/>
+        <CheckboxGroup options={["1", "2", "3"]} value={["1","2", "3"]} onChange={(value)=>{console.log(value)}}/>
       </div>
       <CodeView
         value={`

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Checkbox from "./checkbox";
 class CheckboxGroup extends PureComponent {
   state = {
-    value: []
+    value: this.props.defaultValue.length > 0 && this.props.defaultValue || []
   };
   static propTypes = {
     defaultValue: PropTypes.array,
@@ -21,21 +21,32 @@ class CheckboxGroup extends PureComponent {
     value: [],
     onChange: () => {}
   };
+
   onCheckboxChange = e => {
     const currentValue = e.target.value;
-    const { value } = this.state;
+    let { value } = this.state;
     const currentIndex = value.findIndex(v => v === currentValue);
-    //如果没在就加入数组 否则就是 取消选中 删除掉
+    //如果没有则添加，有则删除
     if (currentIndex < 0) {
       value.push(currentValue);
     } else {
       value.splice(currentIndex, 1);
     }
     this.setState({ value });
-    this.props.onChange(value);
+
+    if(this.props.onChange) {
+      this.props.onChange(value);
+    }
   };
+
+
   render() {
-    const {options, disabled ,value:currentValue,defaultValue } = this.props;
+    const {options, 
+      disabled,
+      value:currentValue,
+      defaultValue,
+      onChange,    //eslint-disable-line
+    } = this.props;
     return (
       <div className="checkboxGroup">
         {/* value去匹配选中项目 */}
@@ -46,6 +57,7 @@ class CheckboxGroup extends PureComponent {
               <Checkbox
                 value={currentValue[index]}
                 onChange={this.onCheckboxChange}
+                onClick={this._onClick}
                 disabled={disabled}
                 key={index}
                 defaultChecked={!!isChecked}

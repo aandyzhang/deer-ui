@@ -25,6 +25,7 @@ class Checkbox extends PureComponent {
     checked: this.props.checked || this.props.defaultChecked,
     prevChecked: false 
   }
+
  static getDerivedStateFromProps(nextProps, currentState) {
    const { checked } = nextProps;
     if(checked !== currentState.prevChecked){
@@ -35,17 +36,22 @@ class Checkbox extends PureComponent {
     }
     return null
  }
+
   _onChange = (e) =>{
-    this.setState(({ checked }) => {
-        return {
-          checked: !checked
-        };
-      });
-      this.props.onChange(e);
+    this.setState({
+      checked: e.target.checked
+    })
+    this.props.onChange(e);
   }
 
   render() {
-    const { children, className,value,disabled,indeterminate,prefixCls,...arr} = this.props;
+    const { children, 
+        className,
+        value,
+        disabled,
+        indeterminate,
+        onChange, //eslint-disable-line
+        prefixCls,...arr} = this.props;
     const { checked } = this.state;
     return (
       <div className={`${prefixCls}`}>
