@@ -13,3 +13,6 @@ export { default as Message } from './message';
 export { default as NotFound } from './notFound';
 export { default as Input } from './input';
 export { default as Radio } from './radio';
+export { default as Row } from './row';
+export { default as Col } from './col';
+export { default as Layout } from './layout';

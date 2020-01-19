@@ -18,6 +18,8 @@ function loadStories() {
   require('../stories/feedback');
   //交互组件
   require('../stories/interaction');
+  //布局组件
+  require('../stories/layout');
 }
 
 configureActions({

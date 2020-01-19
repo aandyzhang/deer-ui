@@ -1,0 +1,19 @@
+
+@import "../styles/themes.less";
+@import "../styles/mixins.less";
+@prefixCls: deer-ui-layout;
+.@{prefixCls} {
+    border: 1px solid @border-color;
+    &::before,
+    &::after {
+      content: '';
+      clear: both;
+      zoom: 1;
+    }
+    width: @default-layout-width;
+    padding: @default-layout-padding;
+    margin: 0 auto;
+    &-center {
+        .text-center()
+    }
+}

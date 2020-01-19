@@ -1,0 +1,19 @@
+@import "../../components/styles/themes.less";
+.row {
+  margin: 10px 0px;
+  .col {
+    span {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: @primary-color;
+    }
+    & +.col {
+      span {
+        border-left: 1px solid @border-color;
+      }
+    }
+  }
+}

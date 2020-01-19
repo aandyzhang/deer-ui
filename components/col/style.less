@@ -1,0 +1,17 @@
+@import "../styles/themes.less";
+@import "../styles/mixins.less";
+@prefixCls: deer-ui-col;
+@offsetCls : offset;
+.@{prefixCls} {
+   box-sizing: border-box;
+  .loop(@n) when (@n > 0) {
+    &-@{n} {
+      width: @n / @max-col-length * @max-row-width;
+    }
+    &-@{offsetCls}-@{n} {
+      margin-left: @n / @max-col-length * @max-row-width;
+    }
+    .loop(@n - 1);
+  }
+  .loop(@max-col-length);
+}
