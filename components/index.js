@@ -16,3 +16,4 @@ export { default as Radio } from './radio';
 export { default as Row } from './row';
 export { default as Col } from './col';
 export { default as Layout } from './layout';
+export { default as Select } from './select';

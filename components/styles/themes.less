@@ -20,8 +20,9 @@ deer-ui 默认主题配置
 @disabled-font-color: fade(@font-color, 30%);
 @disabled-bg-color: #f5f5f5;
 @common-bg-color: rgba(0, 0, 0, .5);
-
-
+@default-text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+@disabled-color: #f5f5f5;
+@default-shadow: 0 4px 22px 0 rgba(15, 35, 95, 0.12);
 //动画时间
 @loading-time: 1.5s;
 @loading-opacity: .7;
@@ -29,8 +30,6 @@ deer-ui 默认主题配置
 @animation-type: cubic-bezier(0.165, 0.84, 0.44, 1);
 @animation-type-easy-in-out: cubic-bezier(.9, .25, .08, .83);
 @default-transition: @animation-time @animation-type;
-
-
 //Collapse
 @collapse-animate-time: .4s;
 
@@ -77,7 +76,7 @@ deer-ui 默认主题配置
 @default-message-dark-bg: @common-bg-color;
 @default-message-dark-font-color: #fff;
 //message内容图标大小
-@default-message-icon-font-size: 16px;
+@default-message-icon-font-size: 14px;
 
 
 //Spin
@@ -154,3 +153,9 @@ deer-ui 默认主题配置
 //Layout
 @default-layout-width: 1200px;
 @default-layout-padding: 15px;
+
+
+//Select
+@deer-ui-select-width: 200px;
+@deer-ui-select-offset-top: 5px;
+@default-select-font-size: 14px;

@@ -1,0 +1,90 @@
+@import "../styles/themes.less";
+@import "../styles/animate.less";
+
+@prefixCls : deer-ui-select;
+
+.@{prefixCls} {
+  position: relative;
+  display: inline-block;
+  width: @deer-ui-select-width;
+  &-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    svg {
+      transform: rotate(0deg);
+      transition: @default-transition;
+    }
+  }
+  &-open {
+    animation: deer-ui-select-open @default-transition forwards;
+  }
+  &-close {
+    animation: deer-ui-select-close @default-transition forwards;
+    pointer-events: none;
+  }
+  &-active {
+    .@{prefixCls}-arrow {
+      transform: rotate(180deg);
+      transition: @default-transition;
+    }
+  }
+  &-loading {
+    animation: deer-ui-spin @loading-time linear infinite;
+  }
+  &-content {
+    width: 100%;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    margin-top: @deer-ui-select-offset-top;
+    transform: scale(0);
+    background: #fff;
+    border: 1px solid @border-color;
+    box-shadow: @default-shadow;
+    border-radius: @border-radius;
+  }
+  &-option {
+    width: 100%;
+    border-bottom: 1px solid @border-color;
+    background: #fff;
+    transition: all @default-transition;
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    padding: 8px 5px;
+    color: @font-color;
+    font-size: @default-select-font-size;
+    &:hover {
+      border-color: transparent;
+      background-color: fade(@primary-color, 20%);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &-selected {
+        color: #fff;
+        background-color: @primary-color;
+        border-color: @primary-color;
+        border-bottom: 1px solid @primary-color;
+        text-shadow: @default-text-shadow;
+        &:hover {
+          border-color: transparent;
+          background-color: @primary-color;
+        }
+      }
+      &-disabled {
+        background-color: @disabled-color;
+        cursor: not-allowed;
+        color: @disabled-font-color;
+        &:hover {
+          border-color: transparent;
+          background-color: @disabled-color;
+        }
+      }
+  }
+}

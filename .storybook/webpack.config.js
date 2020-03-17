@@ -6,7 +6,8 @@ module.exports = async ({ config, mode }) => {
 
   config.module.rules.push({
     test: /\.(js|jsx)?$/,
-    loaders: [require.resolve("@storybook/source-loader")],
+    // loaders: [require.resolve("@storybook/source-loader")],
+    loader: "babel-loader",
     enforce: "pre",
     exclude: /node_modules/
   });

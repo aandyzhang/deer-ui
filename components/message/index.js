@@ -128,7 +128,7 @@ class Message extends PureComponent {
          {type === typeConfig['error'] ? <ErrorIcon/> : null}
          {type === typeConfig['primary'] ? <LoadingIcon/> : null}
         </span>
-        {title}
+        <span>{title}</span>
       </div>;
   }
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { CodeView, Checkbox,Radio } from "../components";
+import { CodeView, Checkbox,Radio,Select } from "../components";
 const CheckboxGroup = Checkbox.CheckboxGroup;
-
+const Option = Select.Option
 require('../components/checkbox/style.less');
 require("../components/radio/style.less");
+require("../components/select/style.less");
 
 const plainOptions = ["Php", "Java", "Js"];
 
@@ -182,4 +183,115 @@ storiesOf("交互组件", module)
       `}
       ></CodeView>
     </div>
-  ));
+  ))
+  .add("Select选择框", () => (
+    <div>
+       <h2>基本使用</h2>
+        <Select  onChange={value => console.log('选中值',value)}>
+            <Option value="">请选择</Option>
+            <Option value="huawei">华为</Option>
+            <Option value="apple">苹果</Option>
+            <Option value="mi">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <div style={{ marginBottom: "20px" }}></div>
+        <CodeView
+          value={`
+          import { Select } from 'deer-ui'
+          const Option = Select.Option
+          <Select  onChange={value => console.log('选中值',value)}>
+            <Option value="">请选择</Option>
+            <Option value="huawei">华为</Option>
+            <Option value="apple">苹果</Option>
+            <Option value="mi">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+         </Select>
+        `}
+        ></CodeView>
+         <h2>默认值以及选中回调</h2>
+         <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <div style={{ marginBottom: "20px" }}></div>
+        <CodeView
+          value={`
+          import { Select } from 'deer-ui'
+          const Option = Select.Option
+          <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        `}
+        ></CodeView>
+        <h2>禁用</h2>
+        <Select defaultValue="小米"  disabled placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <span style={{marginLeft: "40px"}}></span>
+         <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果" disabled>苹果</Option>
+            <Option value="小米">小米</Option>
+            {/* <Option value="OPPO">OPPO</Option> */}
+        </Select>
+        <div style={{ marginBottom: "20px" }}></div>
+        <CodeView
+          value={`
+          import { Select } from 'deer-ui'
+          const Option = Select.Option
+          <Select defaultValue="小米"  disabled placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <span style={{marginLeft: "40px"}}></span>
+         <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果" disabled>苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+
+        `}
+        ></CodeView>
+         <h2>其他</h2>
+        <Select placeholder="请选择" />
+        <span style={{marginLeft: "40px"}}></span>
+         <Select defaultValue="小米"  allowClear placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <span style={{marginLeft: "40px"}}></span>
+        <Select defaultValue="小米"  loading placeholder="请选择" onChange={value => console.log('选中值',value)}>
+            <Option value="华为">华为</Option>
+            <Option value="苹果">苹果</Option>
+            <Option value="小米">小米</Option>
+            <Option value="OPPO">OPPO</Option>
+        </Select>
+        <div style={{ marginBottom: "20px" }}></div>
+        <CodeView
+          value={`
+          import { Select } from 'deer-ui'
+          const Option = Select.Option
+          <Select placeholder="请选择" />
+          <span style={{marginLeft: "40px"}}></span>
+          <Select defaultValue="小米"  allowClear placeholder="请选择" onChange={value => console.log('选中值',value)}>
+              <Option value="华为">华为</Option>
+              <Option value="苹果">苹果</Option>
+              <Option value="小米">小米</Option>
+              <Option value="OPPO">OPPO</Option>
+          </Select>
+        `}
+        ></CodeView>
+    </div>
+  ))
