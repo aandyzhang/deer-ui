@@ -17,3 +17,4 @@ export { default as Row } from './row';
 export { default as Col } from './col';
 export { default as Layout } from './layout';
 export { default as Select } from './select';
+export { default as DatePicker } from './datePicker';

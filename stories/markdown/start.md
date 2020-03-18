@@ -15,8 +15,13 @@ yarn add deer-ui
 
 
 ## 如何使用
+1. srcipt引入
 
-1. 全部引入
+  ```js
+   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.5/dist/index.min.js"></script>
+   如果不是最新版本手动修改版本号，获取最新cdn代码
+  ```
+2. 全部引入
 
 ```js
 import React from "react"
@@ -32,14 +37,14 @@ class Demo extends React.Component {
 }
 ```
 
-2. 按需引入
+3. 按需引入
 
 ```js
 import Button from 'deer-ui/lib/button';
 import 'deer-ui/lib/button/style.less';
 ```
 
-3. 使用 babel-plugin-import
+4. 使用 babel-plugin-import
 
 ```js
 // .babelrc.js

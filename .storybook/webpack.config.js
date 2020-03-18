@@ -7,7 +7,7 @@ module.exports = async ({ config, mode }) => {
   config.module.rules.push({
     test: /\.(js|jsx)?$/,
     // loaders: [require.resolve("@storybook/source-loader")],
-    loader: "babel-loader",
+    loader: "babel-loader?cacheDirectory",
     enforce: "pre",
     exclude: /node_modules/
   });

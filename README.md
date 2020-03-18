@@ -45,8 +45,11 @@ yarn add deer-ui
 ```
 
 ## 如何使用
-
-> 1. 全部引入
+> 1. srcipt引入
+  ```
+   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.5/dist/index.min.js"></script>
+  ```
+> 2. 全部引入
 
 ```jsx
 import React,{Component} from "react"
@@ -62,14 +65,14 @@ class App extends Component {
 }
 ```
 
-> 2 .按需引入
+> 3. 按需引入
 
 ```js
 import Button from 'deer-ui/es/button';
 import 'deer-ui/es/button/style.less';
 ```
 
-> 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+> 4. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 
 ```js
 // 单独使用在.babelrc.js中配置
@@ -102,7 +105,7 @@ module.exports = {
 
 
 ```
-> 4.配合create-react-app使用按需加载
+> 5. 配合create-react-app使用按需加载
 
 ```js
 在babel-loader的options中配置如下

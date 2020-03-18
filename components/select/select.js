@@ -59,6 +59,7 @@ class Select extends React.Component {
   onResizeHandler = debounce(()=>{
     this.setWrapperBounding()
   },600);
+  
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);
     window.addEventListener("resize", this.onResizeHandler);

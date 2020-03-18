@@ -1,21 +1,30 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { CodeView, Checkbox,Radio,Select } from "../components";
+import moment from 'moment'
+import { CodeView, Checkbox, Radio, Select, DatePicker,Button } from "../components";
 const CheckboxGroup = Checkbox.CheckboxGroup;
-const Option = Select.Option
-require('../components/checkbox/style.less');
+const Option = Select.Option;
+require("../components/checkbox/style.less");
 require("../components/radio/style.less");
 require("../components/select/style.less");
+require("../components/datePicker/style.less");
+require("../components/button/style.less");
 
 const plainOptions = ["Php", "Java", "Js"];
-
 
 storiesOf("交互组件", module)
   .add("复选多选框", () => (
     <div>
       <h4>基本使用</h4>
       <div style={{ marginBottom: "30px" }}>
-      <Checkbox  value="Checkbox" onChange={(e)=>{console.log(e.target.checked)}}>复选框</Checkbox>
+        <Checkbox
+          value="Checkbox"
+          onChange={e => {
+            console.log(e.target.checked);
+          }}
+        >
+          复选框
+        </Checkbox>
       </div>
       <CodeView
         value={`
@@ -23,10 +32,26 @@ storiesOf("交互组件", module)
         <Checkbox  value="Checkbox" onChange={(e)=>{console.log(e.target.checked)}}>复选框</Checkbox>
       `}
       ></CodeView>
-    <h4>默认选中</h4>
+      <h4>默认选中</h4>
       <div style={{ marginBottom: "30px" }}>
-      <Checkbox  value="php" checked onChange={(e)=>{console.log(e.target.checked)}}>Php</Checkbox>
-      <Checkbox  value="js" defaultChecked onChange={(e)=>{console.log(e.target.checked)}}>Javascript</Checkbox>
+        <Checkbox
+          value="php"
+          checked
+          onChange={e => {
+            console.log(e.target.checked);
+          }}
+        >
+          Php
+        </Checkbox>
+        <Checkbox
+          value="js"
+          defaultChecked
+          onChange={e => {
+            console.log(e.target.checked);
+          }}
+        >
+          Javascript
+        </Checkbox>
       </div>
       <CodeView
         value={`
@@ -35,10 +60,27 @@ storiesOf("交互组件", module)
         <Checkbox  value="js" defaultChecked onChange={(e)=>{console.log(e.target.checked)}}>Javascript</Checkbox>
       `}
       ></CodeView>
-       <h4>禁用</h4>
+      <h4>禁用</h4>
       <div style={{ marginBottom: "30px" }}>
-      <Checkbox  value="php" disabled onChange={(e)=>{console.log(e.target.value)}}>禁用</Checkbox>
-      <Checkbox  value="js"  disabled checked onChange={(e)=>{console.log(e.target.value)}}>选中禁用</Checkbox>
+        <Checkbox
+          value="php"
+          disabled
+          onChange={e => {
+            console.log(e.target.value);
+          }}
+        >
+          禁用
+        </Checkbox>
+        <Checkbox
+          value="js"
+          disabled
+          checked
+          onChange={e => {
+            console.log(e.target.value);
+          }}
+        >
+          选中禁用
+        </Checkbox>
       </div>
       <CodeView
         value={`
@@ -47,9 +89,17 @@ storiesOf("交互组件", module)
         <Checkbox  value="js" defaultChecked onChange={(e)=>{console.log(e.target.value)}}>Javascript</Checkbox>
       `}
       ></CodeView>
-       <h4>不确定</h4>
+      <h4>不确定</h4>
       <div style={{ marginBottom: "30px" }}>
-      <Checkbox  value="不确定" indeterminate onChange={(e)=>{console.log(e.target.value)}}>不确定</Checkbox>
+        <Checkbox
+          value="不确定"
+          indeterminate
+          onChange={e => {
+            console.log(e.target.value);
+          }}
+        >
+          不确定
+        </Checkbox>
       </div>
       <CodeView
         value={`
@@ -59,7 +109,13 @@ storiesOf("交互组件", module)
       ></CodeView>
       <h4>分组多选</h4>
       <div style={{ marginBottom: "30px" }}>
-        <CheckboxGroup options={["1", "2", "3"]} value={["1","2", "3"]} onChange={(value)=>{console.log(value)}}/>
+        <CheckboxGroup
+          options={["1", "2", "3"]}
+          value={["1", "2", "3"]}
+          onChange={value => {
+            console.log(value);
+          }}
+        />
       </div>
       <CodeView
         value={`
@@ -69,9 +125,15 @@ storiesOf("交互组件", module)
         <CheckboxGroup options={plainOptions} value={["php","java", "js"]}/>
       `}
       ></CodeView>
-       <h4>选中回调</h4>
+      <h4>选中回调</h4>
       <div style={{ marginBottom: "30px" }}>
-        <CheckboxGroup options={plainOptions} value={["php","java", "js"]} onChange={(value)=>{console.log(value)}}/>
+        <CheckboxGroup
+          options={plainOptions}
+          value={["php", "java", "js"]}
+          onChange={value => {
+            console.log(value);
+          }}
+        />
       </div>
       <CodeView
         value={`
@@ -83,7 +145,14 @@ storiesOf("交互组件", module)
       ></CodeView>
       <h4>分组默认选中</h4>
       <div style={{ marginBottom: "30px" }}>
-        <CheckboxGroup options={plainOptions} defaultValue={["js"]} value={["php","java", "js"]} onChange={(value)=>{console.log(value)}}/>
+        <CheckboxGroup
+          options={plainOptions}
+          defaultValue={["js"]}
+          value={["php", "java", "js"]}
+          onChange={value => {
+            console.log(value);
+          }}
+        />
       </div>
       <CodeView
         value={`
@@ -95,9 +164,17 @@ storiesOf("交互组件", module)
       `}
       ></CodeView>
 
-    <h4>分组禁用</h4>
+      <h4>分组禁用</h4>
       <div style={{ marginBottom: "30px" }}>
-        <CheckboxGroup options={plainOptions} disabled defaultValue={["js"]} value={["php","java", "js"]} onChange={(value)=>{console.log(value)}}/>
+        <CheckboxGroup
+          options={plainOptions}
+          disabled
+          defaultValue={["js"]}
+          value={["php", "java", "js"]}
+          onChange={value => {
+            console.log(value);
+          }}
+        />
       </div>
       <CodeView
         value={`
@@ -161,7 +238,9 @@ storiesOf("交互组件", module)
       >
         <Radio value="A">A</Radio>
         <Radio value="B">B</Radio>
-        <Radio value="C" disabled>C</Radio>
+        <Radio value="C" disabled>
+          C
+        </Radio>
         <Radio value="D">D</Radio>
       </Radio.Group>
 
@@ -186,17 +265,17 @@ storiesOf("交互组件", module)
   ))
   .add("Select选择框", () => (
     <div>
-       <h2>基本使用</h2>
-        <Select  onChange={value => console.log('选中值',value)}>
-            <Option value="">请选择</Option>
-            <Option value="huawei">华为</Option>
-            <Option value="apple">苹果</Option>
-            <Option value="mi">小米</Option>
-            <Option value="OPPO">OPPO</Option>
-        </Select>
-        <div style={{ marginBottom: "20px" }}></div>
-        <CodeView
-          value={`
+      <h2>基本使用</h2>
+      <Select onChange={value => console.log("选中值", value)}>
+        <Option value="">请选择</Option>
+        <Option value="huawei">华为</Option>
+        <Option value="apple">苹果</Option>
+        <Option value="mi">小米</Option>
+        <Option value="OPPO">OPPO</Option>
+      </Select>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
           import { Select } from 'deer-ui'
           const Option = Select.Option
           <Select  onChange={value => console.log('选中值',value)}>
@@ -207,17 +286,21 @@ storiesOf("交互组件", module)
             <Option value="OPPO">OPPO</Option>
          </Select>
         `}
-        ></CodeView>
-         <h2>默认值以及选中回调</h2>
-         <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
-            <Option value="华为">华为</Option>
-            <Option value="苹果">苹果</Option>
-            <Option value="小米">小米</Option>
-            <Option value="OPPO">OPPO</Option>
-        </Select>
-        <div style={{ marginBottom: "20px" }}></div>
-        <CodeView
-          value={`
+      ></CodeView>
+      <h2>默认值以及选中回调</h2>
+      <Select
+        defaultValue="小米"
+        placeholder="请选择"
+        onChange={value => console.log("选中值", value)}
+      >
+        <Option value="华为">华为</Option>
+        <Option value="苹果">苹果</Option>
+        <Option value="小米">小米</Option>
+        <Option value="OPPO">OPPO</Option>
+      </Select>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
           import { Select } from 'deer-ui'
           const Option = Select.Option
           <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
@@ -227,24 +310,35 @@ storiesOf("交互组件", module)
             <Option value="OPPO">OPPO</Option>
         </Select>
         `}
-        ></CodeView>
-        <h2>禁用</h2>
-        <Select defaultValue="小米"  disabled placeholder="请选择" onChange={value => console.log('选中值',value)}>
-            <Option value="华为">华为</Option>
-            <Option value="苹果">苹果</Option>
-            <Option value="小米">小米</Option>
-            <Option value="OPPO">OPPO</Option>
-        </Select>
-        <span style={{marginLeft: "40px"}}></span>
-         <Select defaultValue="小米"  placeholder="请选择" onChange={value => console.log('选中值',value)}>
-            <Option value="华为">华为</Option>
-            <Option value="苹果" disabled>苹果</Option>
-            <Option value="小米">小米</Option>
-            {/* <Option value="OPPO">OPPO</Option> */}
-        </Select>
-        <div style={{ marginBottom: "20px" }}></div>
-        <CodeView
-          value={`
+      ></CodeView>
+      <h2>禁用</h2>
+      <Select
+        defaultValue="小米"
+        disabled
+        placeholder="请选择"
+        onChange={value => console.log("选中值", value)}
+      >
+        <Option value="华为">华为</Option>
+        <Option value="苹果">苹果</Option>
+        <Option value="小米">小米</Option>
+        <Option value="OPPO">OPPO</Option>
+      </Select>
+      <span style={{ marginLeft: "40px" }}></span>
+      <Select
+        defaultValue="小米"
+        placeholder="请选择"
+        onChange={value => console.log("选中值", value)}
+      >
+        <Option value="华为">华为</Option>
+        <Option value="苹果" disabled>
+          苹果
+        </Option>
+        <Option value="小米">小米</Option>
+        {/* <Option value="OPPO">OPPO</Option> */}
+      </Select>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
           import { Select } from 'deer-ui'
           const Option = Select.Option
           <Select defaultValue="小米"  disabled placeholder="请选择" onChange={value => console.log('选中值',value)}>
@@ -261,26 +355,36 @@ storiesOf("交互组件", module)
             <Option value="OPPO">OPPO</Option>
 
         `}
-        ></CodeView>
-         <h2>其他</h2>
-        <Select placeholder="请选择" />
-        <span style={{marginLeft: "40px"}}></span>
-         <Select defaultValue="小米"  allowClear placeholder="请选择" onChange={value => console.log('选中值',value)}>
-            <Option value="华为">华为</Option>
-            <Option value="苹果">苹果</Option>
-            <Option value="小米">小米</Option>
-            <Option value="OPPO">OPPO</Option>
-        </Select>
-        <span style={{marginLeft: "40px"}}></span>
-        <Select defaultValue="小米"  loading placeholder="请选择" onChange={value => console.log('选中值',value)}>
-            <Option value="华为">华为</Option>
-            <Option value="苹果">苹果</Option>
-            <Option value="小米">小米</Option>
-            <Option value="OPPO">OPPO</Option>
-        </Select>
-        <div style={{ marginBottom: "20px" }}></div>
-        <CodeView
-          value={`
+      ></CodeView>
+      <h2>其他</h2>
+      <Select placeholder="请选择" />
+      <span style={{ marginLeft: "40px" }}></span>
+      <Select
+        defaultValue="小米"
+        allowClear
+        placeholder="请选择"
+        onChange={value => console.log("选中值", value)}
+      >
+        <Option value="华为">华为</Option>
+        <Option value="苹果">苹果</Option>
+        <Option value="小米">小米</Option>
+        <Option value="OPPO">OPPO</Option>
+      </Select>
+      <span style={{ marginLeft: "40px" }}></span>
+      <Select
+        defaultValue="小米"
+        loading
+        placeholder="请选择"
+        onChange={value => console.log("选中值", value)}
+      >
+        <Option value="华为">华为</Option>
+        <Option value="苹果">苹果</Option>
+        <Option value="小米">小米</Option>
+        <Option value="OPPO">OPPO</Option>
+      </Select>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
           import { Select } from 'deer-ui'
           const Option = Select.Option
           <Select placeholder="请选择" />
@@ -292,6 +396,99 @@ storiesOf("交互组件", module)
               <Option value="OPPO">OPPO</Option>
           </Select>
         `}
-        ></CodeView>
+      ></CodeView>
     </div>
   ))
+  .add("DatePicker", () => (
+    <div>
+      <h2>基本使用</h2>
+      <DatePicker />
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker />
+        `}
+      ></CodeView>
+      <h2>禁用</h2>
+      <DatePicker disabled/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker />
+        `}
+      ></CodeView>
+       <h2>默认值</h2>
+      <DatePicker defaultValue={moment()}/>
+      <h2>loading</h2>
+      <DatePicker loading/>
+      <h2>面板不显示今天</h2>
+      <DatePicker showToday={false}/>
+      <h2>自定义日期输出格式</h2>
+      <DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue={moment()}/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker defaultValue={moment("2020-03-25", "YYYY-MM-DD")}/>
+          <DatePicker loading/>
+          <DatePicker showToday={false}/>
+          <DatePicker format="YYYY-MM-DD HH:mm:ss" defaultValue={moment()}/>
+        `}
+      ></CodeView>
+      <h2>选择回调</h2>
+      <DatePicker
+        onChange={(date, selectedValue, selectMoment) => {
+          console.log(date, selectedValue, selectMoment);
+        }}
+      />
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker onChange={(date,selectedValue,selectMoment)=>{console.log(date,selectedValue,selectMoment)}}/>
+        `}
+      ></CodeView>
+       <h2>自定义底部按钮</h2>
+      <DatePicker
+        extraFooter={
+         <Button type="info">这块可以自己定制内容</Button>
+        }
+        />
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker onChange={(date,selectedValue,selectMoment)=>{console.log(date,selectedValue,selectMoment)}}/>
+        `}
+      ></CodeView>
+      <h2>自定义日期范围</h2>
+      <DatePicker placeholder="只能选取后面的月份" disabledDate={currentDate => currentDate < moment().endOf("day")}/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <DatePicker placeholder="全禁止" disabledDate={() => true}/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <DatePicker placeholder="自定义一个月" disabledDate={currentDate => !currentDate.isBetween(moment(), moment().add(1, "month"))}/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView 
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker placeholder="只能选取后面的月份" disabledDate={currentDate => currentDate < moment().endOf("day")}/>
+          <DatePicker placeholder="全禁止" disabledDate={() => true}/>
+          <DatePicker placeholder="自定义一个月" disabledDate={currentDate => !currentDate.isBetween(moment(), moment().add(1, "month"))}/>
+        `}
+      ></CodeView>
+      <h2>方向-默认向下</h2>
+      <DatePicker />
+      <div style={{ marginBottom: "20px" }}></div>
+      <h2>方向-默认向上</h2>
+      <DatePicker position="top"/>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView 
+        value={`
+          import { DatePicker } from 'deer-ui'
+          <DatePicker position="top"/>
+        `}
+      ></CodeView>
+    </div>
+  ));

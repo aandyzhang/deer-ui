@@ -1,5 +1,6 @@
 // const webpack = require("webpack");
 const path = require("path");
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
@@ -32,7 +33,7 @@ module.exports = {
         exclude: "/node_modules/",
         use: [
           {
-            loader: "babel-loader"
+            loader: "babel-loader?cacheDirectory"
           }
         ],
         include: [path.resolve("components")]
@@ -109,6 +110,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].min.css" // 提取后的css的文件名
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   externals: {
     react: {

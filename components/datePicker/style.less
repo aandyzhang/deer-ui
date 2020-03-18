@@ -1,0 +1,171 @@
+@import "../styles/themes.less";
+@import "../styles/animate.less";
+
+@prefixCls: deer-ui-date-picker;
+
+.@{prefixCls} {
+  position: relative;
+  display: inline-block;
+  width: @deer-ui-date-picker-width;
+  &-inner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    svg {
+      transform: rotate(0deg);
+      transition: @default-transition;
+    }
+  }
+  &-active {
+    .@{prefixCls}-arrow {
+      transform: rotate(180deg);
+      transition: @default-transition;
+    }
+  }
+  &-content {
+    position: absolute;
+    width: @deer-ui-date-picker-width;
+    z-index: 10;
+    height: auto;
+    left: 0;
+    top: 0;
+    background: #fff;
+    border: 1px solid @border-color;
+    box-shadow: @default-shadow;
+    border-radius: @border-radius;
+    transform: scale(0);
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: @deer-ui-date-picker-offset-top;
+  }
+  &-open {
+    animation: deer-ui-select-open @default-transition forwards;
+  }
+  &-close {
+    animation: deer-ui-select-close @default-transition forwards;
+    pointer-events: none;
+  }
+  &-header {
+    padding: 15px 20px;
+    color: @primary-color;
+    font-weight: bold;
+  }
+  &-date {
+    font-size: @font-size + 2;
+    letter-spacing: 1px;
+    margin-right: 10px;
+  }
+  &-switch {
+    float: right;
+    & >.@{prefixCls}-switch-group {
+      cursor: pointer;
+      margin: 0 5px;
+      border: 1px solid @border-color;
+      border-radius: 50%;
+      background-color: @bg-color;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      display: inline-block;
+      transition: all @default-transition;
+
+      &:hover {
+        background-color: @primary-color;
+        border-color: @primary-color;
+        color: #fff;
+        text-shadow: @default-text-shadow;
+      }
+    }
+  }
+  &-items {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    .@{prefixCls}-item {
+      user-select: none;
+      text-align: center;
+      display: inline-block;
+      width: @deer-ui-date-picker-date-width;
+      height: @deer-ui-date-picker-date-height;
+      line-height: @deer-ui-date-picker-date-height;
+      border-radius: 50%;
+      margin: @deer-ui-date-picker-date-offset;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all @default-transition;
+      &:not(.@{prefixCls}-day-title):not(.@{prefixCls}-last-month):not(.@{prefixCls}-next-month):not(.@{prefixCls}-disabled-date):hover {
+        border: 1px solid @primary-color;
+      }
+    }
+  }
+  &-button {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    background-color: @disabled-color;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    &-icon {
+      color: @primary-color;
+    }
+  }
+  &-disabled-date {
+    background-color: @disabled-color;
+    color: @disabled-font-color;
+    &.@{prefixCls}-item {
+      cursor: not-allowed;
+      border-radius: @border-radius;
+      transition: none !important;
+    }
+  }
+  &-last-month,
+  &-next-month {
+    color: @disabled-font-color;
+  }
+  &-current-month {
+    border: 1px solid transparent;
+    border-radius: @border-radius;
+  }
+  &-selected-date {
+    border-color: @primary-color;
+    background-color: @primary-color;
+    color: #fff;
+    text-shadow: @default-text-shadow;
+  }
+  &-footer {
+    margin-right:20px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: flex-end;
+    &-today,
+    &-clear {
+      cursor: pointer;
+      user-select: none;
+    }
+    &-today {
+      color: @primary-color;
+      transition: color @default-transition;
+      &:hover {
+        color: lighten(@primary-color, 10%);
+      }
+    }
+    &-clear {
+      color: @primary-color;
+      transition: color @default-transition;
+      margin-left: 10px;
+      &:hover {
+        color: lighten(@primary-color, 10%);
+      }
+    }
+    &-extra {
+      margin-top: 10px;
+    }
+    &.@{prefixCls}-has-border {
+      border-top: 1px solid @border-color;
+    }
+  }
+}
