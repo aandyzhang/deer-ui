@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/zhangboyang123/deer-ui/compare/v1.1.5...v1.1.6) (2020-03-18)
+
+
+### Features
+
+* **col,row,layout:** 新增布局组件 ([b16da05](https://github.com/zhangboyang123/deer-ui/commit/b16da051a35c0e8544ce5feca0e110201c84d8eb))
+* 新增datePicker组件,组件文档,增加组件cdn地址 ([576a5f0](https://github.com/zhangboyang123/deer-ui/commit/576a5f003afb0bbebc3bd6ef2268c54edced3403))
+* 新增Select组件,修改组件库文档打包loader ([3ed2a60](https://github.com/zhangboyang123/deer-ui/commit/3ed2a60b2c6b417adce1156031b2e833f3a46407))
+
 ### [1.1.5](https://github.com/zhangboyang123/deer-ui/compare/v1.1.4...v1.1.5) (2020-01-16)
 
 
