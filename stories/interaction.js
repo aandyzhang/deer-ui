@@ -7,7 +7,7 @@ const Option = Select.Option;
 require("../components/checkbox/style.less");
 require("../components/radio/style.less");
 require("../components/select/style.less");
-require("../components/datePicker/style.less");
+require("../components/date-picker/style.less");
 require("../components/button/style.less");
 
 const plainOptions = ["Php", "Java", "Js"];
