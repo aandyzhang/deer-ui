@@ -48,6 +48,7 @@ yarn add deer-ui
 > 1. srcipt引入
   ```
    <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.5/dist/index.min.js"></script>
+   如果版本号不是最新的，请手动修改版本号，以此来获取最新的cdn代码
   ```
 > 2. 全部引入
 
