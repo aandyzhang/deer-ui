@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.7](https://github.com/zhangboyang123/deer-ui/compare/v1.1.6...v1.1.7) (2020-03-19)
+
+
+### Bug Fixes
+
+* 修改 scroll-into-view-if-needed包依赖 ([34e97f8](https://github.com/zhangboyang123/deer-ui/commit/34e97f8943b838f0b0950f1a0408044fa05038bd))
+* 修改select,datepiker样式依赖问题,修改datepicker文件夹名称 ([5011250](https://github.com/zhangboyang123/deer-ui/commit/50112506357a8236e130bd1d6ce09564f20791bb))
+
 ### [1.1.6](https://github.com/zhangboyang123/deer-ui/compare/v1.1.5...v1.1.6) (2020-03-18)
 
 
