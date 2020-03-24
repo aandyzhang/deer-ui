@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/zhangboyang123/deer-ui/compare/v1.1.7...v1.1.8) (2020-03-24)
+
+
+### Features
+
+* 新增 文件上传组件upload ([4f8dfbf](https://github.com/zhangboyang123/deer-ui/commit/4f8dfbfb81fd13124f2d720409a128fcfd01a661))
+
 ### [1.1.7](https://github.com/zhangboyang123/deer-ui/compare/v1.1.6...v1.1.7) (2020-03-19)
 
 
