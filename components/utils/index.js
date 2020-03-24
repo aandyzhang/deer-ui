@@ -16,3 +16,16 @@ export const debounce = (func, wait) => {
         },wait)
     }
 }
+
+export const formatFileSize = fileSize => {
+    const sizeUnitArr = ["Byte", "KB", "MB", "GB"];
+    if (fileSize === 0) {
+      return "0 KB";
+    }
+    const i = parseInt(Math.floor(Math.log(fileSize) / Math.log(1024)));
+    if (i === 0) {
+      return fileSize + sizeUnitArr[i];
+    }
+    return (fileSize / 1024 ** i).toFixed(0) + sizeUnitArr[i];
+  };
+  

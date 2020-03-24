@@ -18,3 +18,5 @@ export { default as Col } from './col';
 export { default as Layout } from './layout';
 export { default as Select } from './select';
 export { default as DatePicker } from './date-picker';
+export { default as Upload } from './upload'
+export { default as Progress } from './progress'

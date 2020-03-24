@@ -1,7 +1,8 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import moment from 'moment'
-import { CodeView, Checkbox, Radio, Select, DatePicker,Button } from "../components";
+import { CodeView, Checkbox, Radio, Select, DatePicker,Button,Upload,Message } from "../components";
+import { FileUploadIcon } from "../components/icon";
 const CheckboxGroup = Checkbox.CheckboxGroup;
 const Option = Select.Option;
 require("../components/checkbox/style.less");
@@ -9,9 +10,33 @@ require("../components/radio/style.less");
 require("../components/select/style.less");
 require("../components/date-picker/style.less");
 require("../components/button/style.less");
+require("../components/upload/style.less");
+require("../components/progress/style.less");
 
 const plainOptions = ["Php", "Java", "Js"];
-
+const uploadProps = {
+  action: "http://localhost:3301/api/upload",
+  onComplete: res => {
+    console.log(res);
+    Message.success("上传成功");
+  },
+  onError: err => {
+    console.log(err);
+    console.log("失败")
+    Message.error("上传失败");
+  },
+  onStart: () => {
+    console.log("上传开始");
+  },
+  onTimeOut: err => {
+    console.log(err);
+    Message.error("上传超时");
+  },
+  onProgress: (e, progress) => {
+    console.log("进度")
+    console.log(e, progress);
+  }
+};
 storiesOf("交互组件", module)
   .add("复选多选框", () => (
     <div>
@@ -399,7 +424,7 @@ storiesOf("交互组件", module)
       ></CodeView>
     </div>
   ))
-  .add("DatePicker", () => (
+  .add("DatePicker日期选择器", () => (
     <div>
       <h2>基本使用</h2>
       <DatePicker />
@@ -491,4 +516,59 @@ storiesOf("交互组件", module)
         `}
       ></CodeView>
     </div>
-  ));
+  ))
+  .add('Upload上传组件', () => (
+    <div>
+      <h2>基本使用</h2>
+      <Upload {...uploadProps}>
+        <Button>
+          <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择文件
+        </Button>
+      </Upload>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { Upload } from 'deer-ui'
+          <Upload {...uploadProps}>
+          <Button>
+            <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择文件
+          </Button>
+        </Upload>
+        `}
+      ></CodeView>
+      <h2>上传图片</h2>
+      <Upload {...uploadProps} type="image">
+        <Button>
+          <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择图片
+        </Button>
+      </Upload>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { Upload } from 'deer-ui'
+          <Upload {...uploadProps} type="image">
+          <Button>
+            <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择图片
+          </Button>
+        </Upload>
+        `}
+      ></CodeView>
+      <h2>上传多张图片</h2>
+      <Upload {...uploadProps} type="image" multiple={true}>
+        <Button>
+          <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择图片
+        </Button>
+      </Upload>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { Upload } from 'deer-ui'
+          <Upload {...uploadProps} type="image">
+          <Button>
+            <FileUploadIcon style={{marginRight: "10px",verticalAlign: "-2px"}}/> 选择图片
+          </Button>
+        </Upload>
+        `}
+      ></CodeView>
+    </div>
+  ))

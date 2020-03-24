@@ -17,7 +17,7 @@ module.exports = {
   },
   output: {
     path: path.join(process.cwd(), "dist"),
-    library: name,
+    library: "deer",
     libraryTarget: "umd",
     umdNamedDefine: true,
     filename: "index.js",

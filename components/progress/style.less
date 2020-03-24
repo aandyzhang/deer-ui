@@ -1,0 +1,149 @@
+@import "../styles/themes.less";
+@import "../styles/animate.less";
+@import "../styles/mixins.less";
+
+@prefixCls : deer-ui-progress;
+
+.@{prefixCls} {
+    width: 100%;
+    height: @deer-ui-progress-height;
+    border-radius: @deer-ui-progress-border-radius;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-enter {
+        width: 100%;
+        height: inherit;
+        background: @bg-color;
+        overflow: hidden;
+        border-radius: @deer-ui-progress-border-radius;
+    }
+
+    &-num {
+        margin-left: 10px;
+        font-size: 12px;
+        color: @font-color;
+    }
+
+    &-bg {
+        height: inherit;
+        border-radius: @deer-ui-progress-border-radius;
+        background-color: @primary-color;
+        transition: width @default-transition;
+
+        &-animation {
+            background-size: @deer-ui-progress-bg-offset;
+            animation: panoramic @deer-ui-progress-animate-time linear infinite;
+        }
+    }
+
+    &-default {
+        .@{prefixCls}-bg {
+            background-color: @primary-color;
+
+            &-animation {
+                .set-progress-bar-bg(@primary-color);
+            }
+        }
+    }
+
+    &-success {
+        .@{prefixCls}-bg {
+            background-color: @success-color;
+
+            &-animation {
+                .set-progress-bar-bg(@success-color);
+            }
+        }
+    }
+
+    &-progress {
+        .@{prefixCls}-bg {
+            background-color: @info-color;
+
+            &-animation {
+                .set-progress-bar-bg(@info-color);
+            }
+        }
+    }
+
+    &-warning {
+        .@{prefixCls}-bg {
+            background-color: @warning-color;
+
+            &-animation {
+                .set-progress-bar-bg(@warning-color);
+            }
+        }
+    }
+
+    &-error {
+        .@{prefixCls}-bg {
+            background-color: @error-color;
+
+            &-animation {
+                .set-progress-bar-bg(@error-color);
+            }
+        }
+    }
+
+    &-circle {
+        circle {
+            transition: stroke-dasharray @default-transition;
+            // transform: matrix(0, -1, 1, 0, 0, 250);
+            stroke-width: @deer-ui-progress-stroke-width;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        &-wrapper {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        &-percent {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            font-size: @deer-ui-progress-circle-percent-font-size;
+            z-index: 1;
+            color: @font-color;
+        }
+
+        &-bg {
+            stroke: @bg-color;
+        }
+
+        &-stroke-default {
+            stroke: @primary-color;
+        }
+
+        &-stroke-error {
+            stroke: @error-color;
+        }
+
+        &-stroke-warning {
+            stroke: @warning-color;
+        }
+
+        &-stroke-success {
+            stroke: @success-color;
+        }
+
+        &-stroke-progress {
+            stroke: @info-color;
+        }
+    }
+
+    @keyframes panoramic {
+        to {
+            background-position: 200%;
+        }
+    }
+}
