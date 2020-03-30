@@ -1,10 +1,10 @@
 {
   "name": "deer-ui-docs",
-  "version": "3.0.0",
+  "version": "1.1.8",
   "description": "deer-ui组件库文档",
   "main": "index.html",
   "scripts": {
-    "publish": "npm version patch && npm publish --registry https://registry.npmjs.org"
+    "publish:docs": "npm version patch && npm publish --registry https://registry.npmjs.org"
   },
   "keywords": [
     "deer",
