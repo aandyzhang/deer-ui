@@ -10,3 +10,4 @@ dist
 .docs
 .DS_Store
 .docz
+docs/build

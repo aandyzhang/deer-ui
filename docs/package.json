@@ -1,0 +1,22 @@
+{
+  "name": "deer-ui-docs",
+  "version": "3.0.0",
+  "description": "deer-ui组件库文档",
+  "main": "index.html",
+  "scripts": {
+    "publish": "npm version patch && npm publish --registry https://registry.npmjs.org"
+  },
+  "keywords": [
+    "deer",
+    "deer-ui",
+    "deer-ui-docs"
+  ],
+  "files": [
+    "build"
+  ],
+  "author": "zby",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
