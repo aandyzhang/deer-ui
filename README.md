@@ -31,7 +31,7 @@ Deer-ui
   </p>
 
 ##  预览
-- [Deer-ui 组件库文档地址](https://zhangboyang123.github.io/deer-ui)
+- [Deer-ui 组件库文档地址](https://unpkg.com/deer-ui-docs@1.1.8/build/index.html)
 
 ##  安装
 > 使用 npm 
@@ -47,7 +47,7 @@ yarn add deer-ui
 ## 如何使用
 > 1. srcipt引入
   ```
-   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.5/dist/index.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.8/dist/index.min.js"></script>
    如果版本号不是最新的，请手动修改版本号，以此来获取最新的cdn代码
   ```
 > 2. 全部引入
@@ -265,7 +265,7 @@ npm run pub:minor  //都会完成上述不同，唯一区别是，打的npm版�
 ## 参考轮子
 
 - [ant-design](https://github.com/ant-design/ant-design)
-- [cuke-ui](https://github.com/cuke-ui/cuke-ui)
+- [cuke-ui]()
 - [zarm-web](https://github.com/JeromeLin/zarm-web)
 
 
