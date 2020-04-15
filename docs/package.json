@@ -15,8 +15,5 @@
     "build"
   ],
   "author": "zby",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.13.1"
-  }
+  "license": "MIT"
 }
