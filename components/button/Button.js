@@ -66,9 +66,8 @@ class Button extends Component {
     if (href) {
       return (
         <a
-          href={disabled ? "#" : href}
+          href={disabled ? "javascript:void(0);" : href}
           disabled={disabled}
-          onClick={disabled  ? (e => e.preventDefault()) : ()=>{} }
           className={cls(`${prefixCls}-link`,{[`${prefixCls}-link-disabled`]:disabled})}
           {...attr}
         >
@@ -95,7 +94,7 @@ class Button extends Component {
           {...attr}
         >
           {
-            loading && <LoadingIcon className={`${prefixCls}-loading`}/>
+            !circle && loading && <LoadingIcon className={`${prefixCls}-loading`}/>
           }
           <span>{children}</span>
         </button>

@@ -27,10 +27,10 @@ module.exports = {
     rules: {
       "object-shorthand": "error",
       "generator-star-spacing": ["error", "after"],
-      camelcase: ["error", { properties: "never" }],
+      camelcase: ["off", { properties: "always" }],
       eqeqeq: ["error", "smart"],
       "linebreak-style": ["error", "unix"],
-      "new-cap": "error",
+      "new-cap": "off",
       "no-array-constructor": "error",
       "no-lonely-if": "error",
       "no-loop-func": "error",

@@ -1,10 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import moment from 'moment'
-import { CodeView, Checkbox, Radio, Select, DatePicker,Button,Upload,Message } from "../components";
+moment.locale('en');
+import { CodeView, Checkbox, Radio, Select, DatePicker,Button,Upload,Message,LocaleProvider } from "../components";
 import { FileUploadIcon } from "../components/icon";
 const CheckboxGroup = Checkbox.CheckboxGroup;
 const Option = Select.Option;
+import en from '../components/locale/lang/en'
 require("../components/checkbox/style.less");
 require("../components/radio/style.less");
 require("../components/select/style.less");
@@ -513,6 +515,19 @@ storiesOf("交互组件", module)
         value={`
           import { DatePicker } from 'deer-ui'
           <DatePicker position="top"/>
+        `}
+      ></CodeView>
+      <h2>国际化</h2>
+      <LocaleProvider locale={en}>
+        <DatePicker />
+      </LocaleProvider>
+      <div style={{ marginBottom: "20px" }}></div>
+      <CodeView
+        value={`
+          import { DatePicker,LocaleProvider } from 'deer-ui'
+          <LocaleProvider locale={en}>
+          <DatePicker />
+        </LocaleProvider>
         `}
       ></CodeView>
     </div>

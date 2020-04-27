@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> should render a <Button/> components 1`] = `
+<div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-default"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-primary"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-info"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-warning"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-error"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-success"
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-default btn-disabled"
+      disabled=""
+      type="button"
+    >
+      <span>
+        你好
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-default btn-loading"
+      type="button"
+    >
+      <svg
+        class="deer-ui-button-loading"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="12"
+          x2="12"
+          y1="18"
+          y2="22"
+        />
+        <line
+          x1="4.93"
+          x2="7.76"
+          y1="4.93"
+          y2="7.76"
+        />
+        <line
+          x1="16.24"
+          x2="19.07"
+          y1="16.24"
+          y2="19.07"
+        />
+        <line
+          x1="2"
+          x2="6"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="18"
+          x2="22"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="4.93"
+          x2="7.76"
+          y1="19.07"
+          y2="16.24"
+        />
+        <line
+          x1="16.24"
+          x2="19.07"
+          y1="7.76"
+          y2="4.93"
+        />
+      </svg>
+      <span>
+        加载中..
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button deer-ui-button-block"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-default btn-block"
+      type="button"
+    >
+      <span>
+        100%
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-default btn-circle"
+      type="button"
+    >
+      <span>
+        圆形
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-primary btn-size-large"
+      type="button"
+    >
+      <span>
+        大
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-info"
+      type="button"
+    >
+      <span>
+        中
+      </span>
+    </button>
+  </div>
+  <div
+    class="deer-ui-button"
+  >
+    <button
+      class="deer-ui-button-btn deer-ui-button-btn-warning btn-size-small"
+      type="button"
+    >
+      <span>
+        小
+      </span>
+    </button>
+  </div>
+</div>
+`;

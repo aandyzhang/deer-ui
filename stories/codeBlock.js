@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from "prop-types"
 import Lowlight from 'react-lowlight'
 import js from 'highlight.js/lib/languages/javascript'
-// 内置了很多 颜色主题 
 
 //备选主题
 // import "highlight.js/styles/tomorrow-night-eighties.css"

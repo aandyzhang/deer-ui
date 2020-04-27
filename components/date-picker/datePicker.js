@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import moment from "moment";
 import scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
+import LocaleWrapper from '../locale/localeWrapper';
 import cls from "classnames";
 import Input from "../input";
 import Spin from "../spin";
@@ -13,7 +14,6 @@ const sizes = {
   small: "small",
   large: "large"
 };
-const HEADER = ["一", "二", "三", "四", "五", "六", "日"];
 
 const WEEKDAY = 7;
 
@@ -42,7 +42,7 @@ class DatePicker extends Component {
     prefixCls: "deer-ui-date-picker",
     format: "YYYY-MM-DD",
     size: "default",
-    placeholder: "请选择",
+    placeholder: "",
     allowClear: true,
     onChange: () => {},
     getPopupContainer: () => document.body,
@@ -182,7 +182,8 @@ class DatePicker extends Component {
       prefixCls,
       disabledDate,
       showDayInPrevMonth,
-      showDayInNextMonth
+      showDayInNextMonth,
+      locale
     } = this.props;
 
     const momentDateFirst = this.state.momentSelected.clone().date(1);
@@ -198,7 +199,7 @@ class DatePicker extends Component {
     return (
       <>
         <div>
-          {HEADER.map(day => (
+          {locale.week_days.map(day => (
             <span
               className={cls(`${prefixCls}-item`, `${prefixCls}-day-title`)}
               key={day}
@@ -329,6 +330,7 @@ class DatePicker extends Component {
       suffix,
       extraFooter,
       showToday,
+      locale,
       disabledDate, //eslint-disable-line
       showDayInPrevMonth, //eslint-disable-line
       showDayInNextMonth, //eslint-disable-line
@@ -351,7 +353,7 @@ class DatePicker extends Component {
             disabled={disabled}
             readOnly
             size={size}
-            placeholder={placeholder}
+            placeholder={placeholder || locale.placeholder}
             style={{
               width: style && style.width
             }}
@@ -417,7 +419,7 @@ class DatePicker extends Component {
                       className={cls(`${prefixCls}-footer-today`)}
                       onClick={this.onSelectToday}
                     >
-                      今天
+                      {locale.today}
                     </div>
                   )}
                   {allowClear && (
@@ -425,7 +427,7 @@ class DatePicker extends Component {
                       className={cls(`${prefixCls}-footer-clear`)}
                       onClick={this.onClear}
                     >
-                      清除
+                      {locale.clear}
                     </div>
                   )}
                 </div>
@@ -441,4 +443,4 @@ class DatePicker extends Component {
   }
 }
 
-export default DatePicker;
+export default LocaleWrapper(DatePicker,'DatePicker');
