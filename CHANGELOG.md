@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/zhangboyang123/deer-ui/compare/v1.1.8...v1.1.9) (2020-05-01)
+
+
+### Features
+
+* 🎸 增加国际化功能,新增自动化测试 ([796424f](https://github.com/zhangboyang123/deer-ui/commit/796424fa28ad9e3f422e61436d230bcb0cd808cb))
+* 🎸 新增组件库文档发布阿里云oss,增加持续集成CI ([d711c28](https://github.com/zhangboyang123/deer-ui/commit/d711c28093ee5d35c5a4fd701aca7011d5c7baf8))
+* 将打包后的文档做成npm包,部署cdn ([9c2c8dc](https://github.com/zhangboyang123/deer-ui/commit/9c2c8dcfe9507074a790d067b69dae36abf00d32))
+* 替换文档地址 ([a5d57a3](https://github.com/zhangboyang123/deer-ui/commit/a5d57a3dcbba6f1addb6f2f9feda8c7b420db692))
+
+
+### Bug Fixes
+
+* 🐛 修改button导出 ([948b736](https://github.com/zhangboyang123/deer-ui/commit/948b73674e02c89a5840b6c5927979083cc6ed13))
+* 🐛 修改travis配置 ([58632d1](https://github.com/zhangboyang123/deer-ui/commit/58632d164261df9b7b635c4a32711d4c06951659))
+* 🐛 修改配置 ([43cd4a1](https://github.com/zhangboyang123/deer-ui/commit/43cd4a17580fce8c0060db19e2f140d8840d0b65))
+* 修改发布文档发布cdn脚本 ([fc0e7cf](https://github.com/zhangboyang123/deer-ui/commit/fc0e7cf618ea3582c58320c02791fbbb0a573d95))
+
 ### [1.1.8](https://github.com/zhangboyang123/deer-ui/compare/v1.1.7...v1.1.8) (2020-03-24)
 
 
