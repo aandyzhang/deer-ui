@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders CheckboxGroup correctly 1`] = `
+<div
+  class="checkboxGroup"
+>
+  <div
+    class="deer-ui-checkbox"
+  >
+    <label
+      class="deer-ui-checkbox-wrapper"
+    >
+      <span
+        class="deer-ui-checkbox-wrapper-content"
+      >
+        <input
+          class="deer-ui-checkbox-checkbox"
+          type="checkbox"
+          value="php"
+        />
+        <span
+          class="deer-ui-checkbox-inner"
+        />
+        <span>
+          Php
+        </span>
+      </span>
+    </label>
+  </div>
+  <div
+    class="deer-ui-checkbox"
+  >
+    <label
+      class="deer-ui-checkbox-wrapper"
+    >
+      <span
+        class="deer-ui-checkbox-wrapper-content"
+      >
+        <input
+          class="deer-ui-checkbox-checkbox"
+          type="checkbox"
+          value="java"
+        />
+        <span
+          class="deer-ui-checkbox-inner"
+        />
+        <span>
+          Java
+        </span>
+      </span>
+    </label>
+  </div>
+  <div
+    class="deer-ui-checkbox"
+  >
+    <label
+      class="deer-ui-checkbox-wrapper"
+    >
+      <span
+        class="deer-ui-checkbox-wrapper-content"
+      >
+        <input
+          class="deer-ui-checkbox-checkbox"
+          type="checkbox"
+          value="js"
+        />
+        <span
+          class="deer-ui-checkbox-inner"
+        />
+        <span>
+          Js
+        </span>
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox renders checked Checkbox 1`] = `
+<div
+  class="deer-ui-checkbox"
+>
+  <label
+    checked=""
+    class="deer-ui-checkbox-wrapper"
+  >
+    <span
+      class="deer-ui-checkbox-wrapper-content deer-ui-checkbox-wrapper-content-checked"
+    >
+      <input
+        checked=""
+        class="deer-ui-checkbox-checkbox"
+        type="checkbox"
+        value="php"
+      />
+      <span
+        class="deer-ui-checkbox-inner"
+      />
+      <span>
+        Php
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders defaultChecked Checkbox correctly 1`] = `
+<div
+  class="deer-ui-checkbox"
+>
+  <label
+    class="deer-ui-checkbox-wrapper"
+  >
+    <span
+      class="deer-ui-checkbox-wrapper-content deer-ui-checkbox-wrapper-content-checked"
+    >
+      <input
+        checked=""
+        class="deer-ui-checkbox-checkbox"
+        type="checkbox"
+        value="js"
+      />
+      <span
+        class="deer-ui-checkbox-inner"
+      />
+      <span>
+        Javascript
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders disabled Checkbox 1`] = `
+<div
+  class="deer-ui-checkbox"
+>
+  <label
+    class="deer-ui-checkbox-wrapper deer-ui-checkbox-wrapper-disabled"
+  >
+    <span
+      class="deer-ui-checkbox-wrapper-content"
+    >
+      <input
+        class="deer-ui-checkbox-checkbox"
+        disabled=""
+        type="checkbox"
+        value="Checkbox"
+      />
+      <span
+        class="deer-ui-checkbox-inner"
+      />
+      <span>
+        复选框
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders indeterminate Checkbox 1`] = `
+<div
+  class="deer-ui-checkbox"
+>
+  <label
+    class="deer-ui-checkbox-wrapper"
+  >
+    <span
+      class="deer-ui-checkbox-wrapper-content"
+    >
+      <input
+        class="deer-ui-checkbox-checkbox"
+        type="checkbox"
+        value="Checkbox"
+      />
+      <span
+        class="deer-ui-checkbox-inner"
+      />
+      <span>
+        复选框
+      </span>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox renders normal Checkbox 1`] = `
+<div
+  class="deer-ui-checkbox"
+>
+  <label
+    class="deer-ui-checkbox-wrapper"
+  >
+    <span
+      class="deer-ui-checkbox-wrapper-content"
+    >
+      <input
+        class="deer-ui-checkbox-checkbox"
+        type="checkbox"
+        value="Checkbox"
+      />
+      <span
+        class="deer-ui-checkbox-inner"
+      />
+      <span>
+        复选框
+      </span>
+    </span>
+  </label>
+</div>
+`;

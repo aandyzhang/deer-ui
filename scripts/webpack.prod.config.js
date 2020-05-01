@@ -21,6 +21,7 @@ module.exports = {
     libraryTarget: "umd",
     umdNamedDefine: true,
     filename: "index.js",
+    publicPath: '/',
     // libraryExport: "default",
   },
   resolve: {

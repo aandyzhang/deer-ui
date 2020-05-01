@@ -38,10 +38,13 @@ class Checkbox extends PureComponent {
  }
 
   _onChange = (e) =>{
-    this.setState({
-      checked: e.target.checked
-    })
+    this.setState(({ checked }) => {
+      return {
+        checked: !checked
+      };
+    });
     this.props.onChange(e);
+
   }
 
   render() {

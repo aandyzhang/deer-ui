@@ -14,6 +14,8 @@
     "stylelint": "stylelint 'components/**/*.less'",
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
     "test": "jest --config jest.config.js",
+    "coverage": "npm run test --coverage",
+    "ci:coverage": "npm run coverage && cat ./coverage/lcov.info",
     "eslint": "eslint ./components",
     "eslint:fix": "eslint ./components --fix",
     "lint": "prettier --write \"components/**/*.js\" && npm run eslint:fix && npm run stylelint:fix",
@@ -27,8 +29,8 @@
     "build:css-webpack": "webpack --config scripts/webpack.css.config.js --progress",
     "build:css": "cd scripts && gulp",
     "build:umd": "webpack --config scripts/webpack.prod.config.js --progress",
-    "build:es": "babel components -d es --ignore **/__tests__",
-    "build:lib": "cross-env OUTPUT_MODULE=commonjs babel components -d lib --ignore **/__tests__",
+    "build:es": "babel components -d es --ignore **/test",
+    "build:lib": "cross-env OUTPUT_MODULE=commonjs babel components -d lib --ignore **/test",
     "build": "npm run clean && npm run build:umd && npm run build:es && npm run build:lib && npm run build:css",
     "commit": "git-cz",
     "pubdocs": "node ./scripts/pubdocs.js",
@@ -56,6 +58,10 @@
     "Firefox ESR",
     "not ie < 9"
   ],
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
   "lint-staged": {
     "*.{js.jsx}": [
       "prettier --write",
@@ -70,7 +76,8 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
     }
   },
   "commitizen": {

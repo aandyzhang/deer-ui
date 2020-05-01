@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 
 node_js:
@@ -7,12 +8,11 @@ cache:
   - node_modules
 env:
   - OUTPUT_MODULE=commonjs
-script:
-  - npm run build:docs
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: docs/build
-  on:
-    branch: master
+before_script : "npm run test -- -u"
+
+script: 
+  - npm run lint
+  - npm run test
+
+after_script: 
+  - npm run ci:coverage
