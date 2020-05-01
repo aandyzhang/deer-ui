@@ -6,6 +6,7 @@ import ReactMarkDown from "react-markdown";
 import CodeBlock from "./codeBlock";
 import startMd from './markdown/start.md';
 import themeMd from './markdown/theme.md';
+import LanguageMd from './markdown/language.md';
 import changeLogMd from '../CHANGELOG.md';
 require('./style/index.less');
 storiesOf("综述", module)
@@ -26,12 +27,29 @@ storiesOf("综述", module)
           />
         </a>
         {"  "}
-        <a href="https://isitmaintained.com/project/zhangboyang123/deer-ui">
+        {/* <a href="https://isitmaintained.com/project/zhangboyang123/deer-ui">
           <img src="https://img.shields.io/github/issues/zhangboyang123/deer-ui.svg?style=for-the-badge" />
+        </a> */}
+         <a href="https://badge.fury.io/js/deer-ui" title="npm">
+          <img
+            src="https://img.shields.io/npm/v/deer-ui.svg?style=for-the-badge"
+            alt="npm version"
+          />
         </a>
         {"  "}
         <a href="https://github.com/deer-ui/deer-ui">
           <img src="https://img.shields.io/github/stars/zhangboyang123/deer-ui.svg?style=for-the-badge" />
+        </a>
+      </p>
+      <p>
+        <a href="https://travis-ci.com/deer-ui/deer-ui" title="npm">
+          <img src="https://travis-ci.com/deer-ui/deer-ui.svg?branch=master" alt="travis"/>
+        </a>
+        <a href="https://coveralls.io/github/deer-ui/deer-ui?branch=master?style=for-the-badge" title="Coverage Status">
+          <img src="https://coveralls.io/repos/github/deer-ui/deer-ui/badge.svg?branch=master" alt="Coverage Status"/>
+        </a>
+        <a href="https://david-dm.org/deer-ui/deer-ui" title="dependencies status">
+          <img src="https://david-dm.org/deer-ui/deer-ui/status.svg"/>
         </a>
       </p>
       <h3>deer-ui 一个简单高效轻量级的React组件库</h3>
@@ -100,6 +118,16 @@ storiesOf("综述", module)
     <div>
        <ReactMarkDown
         source={themeMd}
+        renderers={{
+          code: CodeBlock
+        }}
+      />
+    </div>
+  ))
+  .add('国际化',()=> (
+    <div>
+       <ReactMarkDown
+        source={LanguageMd}
         renderers={{
           code: CodeBlock
         }}

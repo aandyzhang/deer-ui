@@ -12,14 +12,30 @@ Deer-ui
         alt="npm"
       />
     </a>
-    <a href="https://isitmaintained.com/project/zhangboyang123/deer-ui">
-      <img src="https://img.shields.io/github/issues/zhangboyang123/deer-ui.svg?style=for-the-badge" />
+     <a href="https://badge.fury.io/js/deer-ui" title="npm">
+      <img
+        src="https://img.shields.io/npm/v/deer-ui.svg?style=for-the-badge"
+        alt="npm version"
+      />
     </a>
+    <!-- <a href="https://isitmaintained.com/project/zhangboyang123/deer-ui">
+      <img src="https://img.shields.io/github/issues/zhangboyang123/deer-ui.svg?style=for-the-badge" />
+    </a> -->
     <a href="https://github.com/deer-ui/deer-ui">
       <img src="https://img.shields.io/github/stars/zhangboyang123/deer-ui.svg?style=for-the-badge" />
     </a>
   </p>
-
+  <p align="center">
+    <a href="https://travis-ci.com/deer-ui/deer-ui" title="npm">
+      <img src="https://travis-ci.com/deer-ui/deer-ui.svg?branch=master" alt="travis"/>
+    </a>
+    <a href="https://coveralls.io/github/deer-ui/deer-ui?branch=master?style=for-the-badge" title="Coverage Status">
+      <img src="https://coveralls.io/repos/github/deer-ui/deer-ui/badge.svg?branch=master" alt="Coverage Status"/>
+    </a>
+    <a href="https://david-dm.org/deer-ui/deer-ui" title="dependencies status">
+      <img src="https://david-dm.org/deer-ui/deer-ui/status.svg"/>
+    </a>
+  </p>
   <h2>当前版本</h2>
   <p>
     <a href="https://badge.fury.io/js/deer-ui" title="npm">
@@ -31,7 +47,7 @@ Deer-ui
   </p>
 
 ##  预览
-- [Deer-ui 组件库文档地址](https://unpkg.com/deer-ui-docs@1.1.8/build/index.html)
+- [Deer-ui 组件库文档地址](https://unpkg.com/deer-ui-docs@1.1.9/build/index.html)
 
 ##  安装
 > 使用 npm 
@@ -47,8 +63,8 @@ yarn add deer-ui
 ## 如何使用
 > 1. srcipt引入
   ```
-   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.8/dist/index.min.js"></script>
-   如果版本号不是最新的，请手动修改版本号，以此来获取最新的cdn代码
+   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.9/dist/index.min.js"></script>
+   如果不是最新代码，请手动修改版本号，以此来获取最新的cdn代码
   ```
 > 2. 全部引入
 
@@ -176,7 +192,18 @@ module.exports = {
 
 注意,定制主题后，less-loader 的处理范围不能过滤掉 node_modules 下的 deer-ui 包。
 ```
+##  国际化
+deer-ui 提供了一个 React 组件 ConfigProvider 用于全局配置国际化文案。目前的默认文案是中文，如果需要使用其他语言，可以参考下面的方案。
+```js
+import { LocaleProvider } from "deer-ui"
+import zhCN from 'deer-ui/es/locale/lang/zh_cn';
+return (
+  <LocaleProvider locale={zhCN}>
+    <App />
+  </LocaleProvider>
+);
 
+```
 ##  更新日志
 
 [CHANGELOG](https://github.com/zhangboyang123/deer-ui/blob/master/CHANGELOG.md)
