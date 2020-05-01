@@ -47,7 +47,7 @@ Deer-ui
   </p>
 
 ##  预览
-- [Deer-ui 组件库文档地址](https://unpkg.com/deer-ui-docs@1.1.9/build/index.html)
+- [Deer-ui 组件库文档地址](https://unpkg.com/deer-ui-docs@1.1.10/build/index.html)
 
 ##  安装
 > 使用 npm 
@@ -63,7 +63,7 @@ yarn add deer-ui
 ## 如何使用
 > 1. srcipt引入
   ```
-   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.9/dist/index.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/deer-ui@1.1.10/dist/index.min.js"></script>
    如果不是最新代码，请手动修改版本号，以此来获取最新的cdn代码
   ```
 > 2. 全部引入
