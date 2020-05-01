@@ -37,19 +37,19 @@ storiesOf("综述", module)
           />
         </a>
         {"  "}
-        <a href="https://github.com/deer-ui/deer-ui">
+        <a href="https://github.com/zhangboyang123/deer-ui">
           <img src="https://img.shields.io/github/stars/zhangboyang123/deer-ui.svg?style=for-the-badge" />
         </a>
       </p>
       <p>
-        <a href="https://travis-ci.com/deer-ui/deer-ui" title="npm">
-          <img src="https://travis-ci.com/deer-ui/deer-ui.svg?branch=master" alt="travis"/>
+        <a href="https://travis-ci.com/zhangboyang123/deer-ui" title="npm">
+          <img src="https://travis-ci.com/zhangboyang123/deer-ui.svg?branch=master" alt="travis"/>
         </a>
-        <a href="https://coveralls.io/github/deer-ui/deer-ui?branch=master?style=for-the-badge" title="Coverage Status">
-          <img src="https://coveralls.io/repos/github/deer-ui/deer-ui/badge.svg?branch=master" alt="Coverage Status"/>
+        <a href="https://coveralls.io/github/zhangboyang123/deer-ui?branch=master?style=for-the-badge" title="Coverage Status">
+          <img src="https://coveralls.io/repos/github/zhangboyang123/deer-ui/badge.svg?branch=master" alt="Coverage Status"/>
         </a>
-        <a href="https://david-dm.org/deer-ui/deer-ui" title="dependencies status">
-          <img src="https://david-dm.org/deer-ui/deer-ui/status.svg"/>
+        <a href="https://david-dm.org/zhangboyang123/deer-ui" title="dependencies status">
+          <img src="https://david-dm.org/zhangboyang123/deer-ui/status.svg"/>
         </a>
       </p>
       <h3>deer-ui 一个简单高效轻量级的React组件库</h3>
