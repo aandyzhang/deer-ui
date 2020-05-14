@@ -4,7 +4,7 @@
   "description": "deer-ui组件库文档",
   "main": "index.html",
   "scripts": {
-    "publish:docs": "npm version patch && npm publish --registry https://registry.npmjs.org"
+    "publish:docs": "npm version patch && npm publish --registry https://registry.npmjs.org && git push"
   },
   "keywords": [
     "deer",
