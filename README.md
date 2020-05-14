@@ -220,8 +220,8 @@ return (
 - [自己开源cms后台系统](https://www.webfamily.cn)
 
 ## 后续开发计划
-1. 第一阶段组件已经开发完毕，基本完成message,input,radio,button,table,checkbox,collapse,tabs,empty.loading,icon,divider等基础组件的开发;完成Deer-ui组件库框架搭建，实现自动化打包部署，增加stylelint,eslint,commitlint,自动生成changelog，组件库测试环境搭建，组件库官方文档网站搭建，以及主题定制等功能。 + [x]
-2. 后续增加组件库的自动化测试，国际化功能。 + [x]
++ [x] 1. 第一阶段组件已经开发完毕，基本完成message,input,radio,button,table,checkbox,collapse,tabs,empty.loading,icon,divider等基础组件的开发;完成Deer-ui组件库框架搭建，实现自动化打包部署，增加stylelint,eslint,commitlint,自动生成changelog，组件库测试环境搭建，组件库官方文档网站搭建，以及主题定制等功能。 
++ [x] 2. 后续增加组件库的自动化测试，国际化功能。 
 3. 继续完成后面组件的开发。 
 4. 最后畅想下，使用ts完成组件库的重构。
 
